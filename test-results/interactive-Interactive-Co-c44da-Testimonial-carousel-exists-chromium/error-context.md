@@ -1,0 +1,365 @@
+# Page snapshot
+
+```yaml
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - heading "About Velocity" [level=1] [ref=e4]
+    - paragraph [ref=e5]: We're a small team of builders, designers, and engineers on a mission to help SaaS teams ship faster and convert better.
+  - generic [ref=e8]:
+    - heading "Leadership" [level=2] [ref=e9]
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]: AR
+        - generic [ref=e13]:
+          - heading "Alex Rivera" [level=3] [ref=e14]
+          - paragraph [ref=e15]: Co-Founder & CEO
+          - paragraph [ref=e16]: Former product lead at Stripe. Passionate about making developer tools accessible to everyone. Built three startups before Velocity.
+          - generic [ref=e17]:
+            - link "twitter" [ref=e18] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e19]
+            - link "linkedin" [ref=e21] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e22]
+            - link "github" [ref=e24] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e25]
+      - generic [ref=e27]:
+        - generic [ref=e28]: MZ
+        - generic [ref=e29]:
+          - heading "Mia Zhang" [level=3] [ref=e30]
+          - paragraph [ref=e31]: Co-Founder & CTO
+          - paragraph [ref=e32]: Ex-Google engineer with 12 years of experience in distributed systems. Leads the platform architecture and engineering culture.
+          - generic [ref=e33]:
+            - link "twitter" [ref=e34] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e35]
+            - link "linkedin" [ref=e37] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e38]
+            - link "github" [ref=e40] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e41]
+  - generic [ref=e45]:
+    - heading "Meet the team" [level=2] [ref=e46]
+    - paragraph [ref=e47]: The people behind Velocity Pro who make the magic happen.
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]: AR
+        - heading "Alex Rivera" [level=3] [ref=e51]
+        - paragraph [ref=e52]: Co-Founder & CEO
+        - generic [ref=e53]:
+          - link "twitter" [ref=e54] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e55]
+          - link "linkedin" [ref=e57] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e58]
+          - link "github" [ref=e60] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e61]
+      - generic [ref=e63]:
+        - generic [ref=e64]: MZ
+        - heading "Mia Zhang" [level=3] [ref=e65]
+        - paragraph [ref=e66]: Co-Founder & CTO
+        - generic [ref=e67]:
+          - link "twitter" [ref=e68] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e69]
+          - link "linkedin" [ref=e71] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e72]
+          - link "github" [ref=e74] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e75]
+      - generic [ref=e77]:
+        - generic [ref=e78]: JW
+        - heading "Jordan Williams" [level=3] [ref=e79]
+        - paragraph [ref=e80]: Head of Design
+        - generic [ref=e81]:
+          - link "twitter" [ref=e82] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e83]
+          - link "linkedin" [ref=e85] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e86]
+      - generic [ref=e88]:
+        - generic [ref=e89]: PS
+        - heading "Priya Sharma" [level=3] [ref=e90]
+        - paragraph [ref=e91]: Head of Engineering
+        - generic [ref=e92]:
+          - link "twitter" [ref=e93] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e94]
+          - link "github" [ref=e96] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e97]
+      - generic [ref=e99]:
+        - generic [ref=e100]: TN
+        - heading "Tom Nakamura" [level=3] [ref=e101]
+        - paragraph [ref=e102]: Product Manager
+        - generic [ref=e103]:
+          - link "twitter" [ref=e104] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e105]
+          - link "linkedin" [ref=e107] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e108]
+      - generic [ref=e110]:
+        - generic [ref=e111]: SM
+        - heading "Sofia Martinez" [level=3] [ref=e112]
+        - paragraph [ref=e113]: Growth Lead
+        - generic [ref=e114]:
+          - link "twitter" [ref=e115] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e116]
+          - link "linkedin" [ref=e118] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e119]
+      - generic [ref=e121]:
+        - generic [ref=e122]: LO
+        - heading "Liam O'Brien" [level=3] [ref=e123]
+        - paragraph [ref=e124]: Senior Engineer
+        - link "github" [ref=e126] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e127]
+      - generic [ref=e129]:
+        - generic [ref=e130]: AP
+        - heading "Aisha Patel" [level=3] [ref=e131]
+        - paragraph [ref=e132]: Customer Success
+        - generic [ref=e133]:
+          - link "twitter" [ref=e134] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e135]
+          - link "linkedin" [ref=e137] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e138]
+  - generic [ref=e141]:
+    - heading "Loved by teams everywhere" [level=2] [ref=e142]
+    - generic [ref=e143]:
+      - generic [ref=e144]:
+        - generic [ref=e145]:
+          - img [ref=e146]
+          - img [ref=e148]
+          - img [ref=e150]
+          - img [ref=e152]
+          - img [ref=e154]
+        - paragraph [ref=e156]: "\"Velocity Pro helped us launch our SaaS in half the time. The components are polished and the dark mode is flawless.\""
+        - generic [ref=e157]:
+          - generic [ref=e158]: SC
+          - generic [ref=e159]:
+            - generic [ref=e160]: Sarah Chen
+            - generic [ref=e161]: CTO, Streamline AI
+      - generic [ref=e162]:
+        - generic [ref=e163]:
+          - img [ref=e164]
+          - img [ref=e166]
+          - img [ref=e168]
+          - img [ref=e170]
+          - img [ref=e172]
+        - paragraph [ref=e174]: "\"We switched from a custom build to Velocity Pro and saved over 200 engineering hours. The ROI was immediate.\""
+        - generic [ref=e175]:
+          - generic [ref=e176]: MJ
+          - generic [ref=e177]:
+            - generic [ref=e178]: Marcus Johnson
+            - generic [ref=e179]: Head of Product, DataPulse
+      - generic [ref=e180]:
+        - generic [ref=e181]:
+          - img [ref=e182]
+          - img [ref=e184]
+          - img [ref=e186]
+          - img [ref=e188]
+          - img [ref=e190]
+        - paragraph [ref=e192]: "\"The attention to detail is remarkable. Every animation, every transition — it all feels intentional and premium.\""
+        - generic [ref=e193]:
+          - generic [ref=e194]: ER
+          - generic [ref=e195]:
+            - generic [ref=e196]: Elena Rodriguez
+            - generic [ref=e197]: Design Lead, Pixelcraft Studios
+      - generic [ref=e198]:
+        - generic [ref=e199]:
+          - img [ref=e200]
+          - img [ref=e202]
+          - img [ref=e204]
+          - img [ref=e206]
+          - img [ref=e208]
+        - paragraph [ref=e210]: "\"Our conversion rate jumped 34% after switching to Velocity Pro. The pricing page alone paid for itself.\""
+        - generic [ref=e211]:
+          - generic [ref=e212]: JP
+          - generic [ref=e213]:
+            - generic [ref=e214]: James Park
+            - generic [ref=e215]: Founder & CEO, Launchpad
+      - generic [ref=e216]:
+        - generic [ref=e217]:
+          - img [ref=e218]
+          - img [ref=e220]
+          - img [ref=e222]
+          - img [ref=e224]
+          - img [ref=e226]
+        - paragraph [ref=e228]: "\"As a solo founder, Velocity Pro gave me a site that looks like a funded startup built it. Absolutely worth every penny.\""
+        - generic [ref=e229]:
+          - generic [ref=e230]: AO
+          - generic [ref=e231]:
+            - generic [ref=e232]: Amara Okafor
+            - generic [ref=e233]: Indie Hacker, TaskFlow
+      - generic [ref=e234]:
+        - generic [ref=e235]:
+          - img [ref=e236]
+          - img [ref=e238]
+          - img [ref=e240]
+          - img [ref=e242]
+        - paragraph [ref=e244]: "\"The theming system is incredibly flexible. We customized everything in under a day to match our brand.\""
+        - generic [ref=e245]:
+          - generic [ref=e246]: DK
+          - generic [ref=e247]:
+            - generic [ref=e248]: David Kim
+            - generic [ref=e249]: Frontend Engineer, NovaTech
+      - generic [ref=e250]:
+        - generic [ref=e251]:
+          - img [ref=e252]
+          - img [ref=e254]
+          - img [ref=e256]
+          - img [ref=e258]
+          - img [ref=e260]
+        - paragraph [ref=e262]: "\"Best template purchase we have ever made. Clean code, great docs, and the support is phenomenal.\""
+        - generic [ref=e263]:
+          - generic [ref=e264]: LT
+          - generic [ref=e265]:
+            - generic [ref=e266]: Lisa Thompson
+            - generic [ref=e267]: VP Engineering, CloudNine
+      - generic [ref=e268]:
+        - generic [ref=e269]:
+          - img [ref=e270]
+          - img [ref=e272]
+          - img [ref=e274]
+          - img [ref=e276]
+          - img [ref=e278]
+        - paragraph [ref=e280]: "\"We use Velocity Pro for all our client projects now. It is our secret weapon for fast, beautiful launches.\""
+        - generic [ref=e281]:
+          - generic [ref=e282]: RP
+          - generic [ref=e283]:
+            - generic [ref=e284]: Raj Patel
+            - generic [ref=e285]: Agency Owner, PixelForge
+      - generic [ref=e286]:
+        - generic [ref=e287]:
+          - img [ref=e288]
+          - img [ref=e290]
+          - img [ref=e292]
+          - img [ref=e294]
+          - img [ref=e296]
+        - paragraph [ref=e298]: "\"Velocity Pro helped us launch our SaaS in half the time. The components are polished and the dark mode is flawless.\""
+        - generic [ref=e299]:
+          - generic [ref=e300]: SC
+          - generic [ref=e301]:
+            - generic [ref=e302]: Sarah Chen
+            - generic [ref=e303]: CTO, Streamline AI
+      - generic [ref=e304]:
+        - generic [ref=e305]:
+          - img [ref=e306]
+          - img [ref=e308]
+          - img [ref=e310]
+          - img [ref=e312]
+          - img [ref=e314]
+        - paragraph [ref=e316]: "\"We switched from a custom build to Velocity Pro and saved over 200 engineering hours. The ROI was immediate.\""
+        - generic [ref=e317]:
+          - generic [ref=e318]: MJ
+          - generic [ref=e319]:
+            - generic [ref=e320]: Marcus Johnson
+            - generic [ref=e321]: Head of Product, DataPulse
+      - generic [ref=e322]:
+        - generic [ref=e323]:
+          - img [ref=e324]
+          - img [ref=e326]
+          - img [ref=e328]
+          - img [ref=e330]
+          - img [ref=e332]
+        - paragraph [ref=e334]: "\"The attention to detail is remarkable. Every animation, every transition — it all feels intentional and premium.\""
+        - generic [ref=e335]:
+          - generic [ref=e336]: ER
+          - generic [ref=e337]:
+            - generic [ref=e338]: Elena Rodriguez
+            - generic [ref=e339]: Design Lead, Pixelcraft Studios
+      - generic [ref=e340]:
+        - generic [ref=e341]:
+          - img [ref=e342]
+          - img [ref=e344]
+          - img [ref=e346]
+          - img [ref=e348]
+          - img [ref=e350]
+        - paragraph [ref=e352]: "\"Our conversion rate jumped 34% after switching to Velocity Pro. The pricing page alone paid for itself.\""
+        - generic [ref=e353]:
+          - generic [ref=e354]: JP
+          - generic [ref=e355]:
+            - generic [ref=e356]: James Park
+            - generic [ref=e357]: Founder & CEO, Launchpad
+      - generic [ref=e358]:
+        - generic [ref=e359]:
+          - img [ref=e360]
+          - img [ref=e362]
+          - img [ref=e364]
+          - img [ref=e366]
+          - img [ref=e368]
+        - paragraph [ref=e370]: "\"As a solo founder, Velocity Pro gave me a site that looks like a funded startup built it. Absolutely worth every penny.\""
+        - generic [ref=e371]:
+          - generic [ref=e372]: AO
+          - generic [ref=e373]:
+            - generic [ref=e374]: Amara Okafor
+            - generic [ref=e375]: Indie Hacker, TaskFlow
+      - generic [ref=e376]:
+        - generic [ref=e377]:
+          - img [ref=e378]
+          - img [ref=e380]
+          - img [ref=e382]
+          - img [ref=e384]
+        - paragraph [ref=e386]: "\"The theming system is incredibly flexible. We customized everything in under a day to match our brand.\""
+        - generic [ref=e387]:
+          - generic [ref=e388]: DK
+          - generic [ref=e389]:
+            - generic [ref=e390]: David Kim
+            - generic [ref=e391]: Frontend Engineer, NovaTech
+      - generic [ref=e392]:
+        - generic [ref=e393]:
+          - img [ref=e394]
+          - img [ref=e396]
+          - img [ref=e398]
+          - img [ref=e400]
+          - img [ref=e402]
+        - paragraph [ref=e404]: "\"Best template purchase we have ever made. Clean code, great docs, and the support is phenomenal.\""
+        - generic [ref=e405]:
+          - generic [ref=e406]: LT
+          - generic [ref=e407]:
+            - generic [ref=e408]: Lisa Thompson
+            - generic [ref=e409]: VP Engineering, CloudNine
+      - generic [ref=e410]:
+        - generic [ref=e411]:
+          - img [ref=e412]
+          - img [ref=e414]
+          - img [ref=e416]
+          - img [ref=e418]
+          - img [ref=e420]
+        - paragraph [ref=e422]: "\"We use Velocity Pro for all our client projects now. It is our secret weapon for fast, beautiful launches.\""
+        - generic [ref=e423]:
+          - generic [ref=e424]: RP
+          - generic [ref=e425]:
+            - generic [ref=e426]: Raj Patel
+            - generic [ref=e427]: Agency Owner, PixelForge
+  - generic [ref=e429]:
+    - paragraph [ref=e430]: Trusted by innovative teams
+    - generic [ref=e431]:
+      - generic [ref=e434]: Streamline AI
+      - generic [ref=e437]: DataPulse
+      - generic [ref=e440]: Pixelcraft
+      - generic [ref=e443]: Launchpad
+      - generic [ref=e446]: TaskFlow
+      - generic [ref=e449]: NovaTech
+      - generic [ref=e452]: CloudNine
+      - generic [ref=e455]: PixelForge
+      - generic [ref=e458]: Streamline AI
+      - generic [ref=e461]: DataPulse
+      - generic [ref=e464]: Pixelcraft
+      - generic [ref=e467]: Launchpad
+      - generic [ref=e470]: TaskFlow
+      - generic [ref=e473]: NovaTech
+      - generic [ref=e476]: CloudNine
+      - generic [ref=e479]: PixelForge
+```

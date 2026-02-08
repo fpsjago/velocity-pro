@@ -1,0 +1,65 @@
+# Page snapshot
+
+```yaml
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - heading "Frequently Asked Questions" [level=1] [ref=e4]
+    - paragraph [ref=e5]: Everything you need to know about Velocity Pro.
+  - generic [ref=e8]:
+    - heading [level=2]
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - button "What is included in the free trial?" [ref=e11] [cursor=pointer]:
+          - text: What is included in the free trial?
+          - img [ref=e12]
+        - paragraph [ref=e13]: The 14-day free trial includes full access to all features of your chosen plan. No credit card required to start. You can upgrade, downgrade, or cancel at any time during the trial.
+      - generic [ref=e14]:
+        - button "Can I switch plans later?" [ref=e15] [cursor=pointer]:
+          - text: Can I switch plans later?
+          - img [ref=e16]
+        - paragraph [ref=e17]: Yes! You can upgrade or downgrade your plan at any time. When upgrading, you will be charged the prorated difference. When downgrading, the remaining balance will be credited to your account.
+      - generic [ref=e18]:
+        - button "Do you offer refunds?" [ref=e19] [cursor=pointer]:
+          - text: Do you offer refunds?
+          - img [ref=e20]
+        - paragraph [ref=e21]: We offer a 30-day money-back guarantee on all plans. If you are not satisfied with Velocity Pro, contact our support team for a full refund — no questions asked.
+      - generic [ref=e22]:
+        - button "What payment methods do you accept?" [ref=e23] [cursor=pointer]:
+          - text: What payment methods do you accept?
+          - img [ref=e24]
+        - paragraph [ref=e25]: We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and wire transfers for Enterprise plans. All payments are processed securely through Stripe.
+      - generic [ref=e26]:
+        - button "Is there a discount for annual billing?" [ref=e27] [cursor=pointer]:
+          - text: Is there a discount for annual billing?
+          - img [ref=e28]
+        - paragraph [ref=e29]: Yes! When you choose annual billing, you save approximately 20% compared to monthly billing. The discount is applied automatically at checkout.
+      - generic [ref=e30]:
+        - button "How do I get started?" [ref=e31] [cursor=pointer]:
+          - text: How do I get started?
+          - img [ref=e32]
+        - paragraph [ref=e33]: Sign up for a free trial, choose your plan, and you will be up and running in minutes. Our onboarding wizard will guide you through the initial setup, and our docs cover everything else.
+      - generic [ref=e34]:
+        - button "Do you offer custom Enterprise plans?" [ref=e35] [cursor=pointer]:
+          - text: Do you offer custom Enterprise plans?
+          - img [ref=e36]
+        - paragraph [ref=e37]: Absolutely. Our Enterprise plan is fully customizable — dedicated infrastructure, custom SLAs, priority support, and bespoke integrations. Contact our sales team to discuss your needs.
+      - generic [ref=e38]:
+        - button "What kind of support do you offer?" [ref=e39] [cursor=pointer]:
+          - text: What kind of support do you offer?
+          - img [ref=e40]
+        - paragraph [ref=e41]: All plans include email support with 24-hour response times. Pro plans get priority support with 4-hour response. Enterprise customers receive a dedicated success manager and phone support.
+      - generic [ref=e42]:
+        - button "Is my data secure?" [ref=e43] [cursor=pointer]:
+          - text: Is my data secure?
+          - img [ref=e44]
+        - paragraph [ref=e45]: Security is our top priority. All data is encrypted at rest and in transit. We are SOC 2 Type II certified, GDPR compliant, and undergo regular third-party security audits.
+      - generic [ref=e46]:
+        - button "Can I export my data?" [ref=e47] [cursor=pointer]:
+          - text: Can I export my data?
+          - img [ref=e48]
+        - paragraph [ref=e49]: Yes, you own your data. Pro and Enterprise plans include full data export in CSV, JSON, or via our API. You can export everything at any time from your dashboard settings.
+    - generic [ref=e50]:
+      - paragraph [ref=e51]: Still have questions?
+      - link "Contact us" [ref=e52] [cursor=pointer]:
+        - /url: /contact
+```

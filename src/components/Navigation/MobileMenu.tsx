@@ -4,6 +4,8 @@ import { mainNav } from '../../data/navigation';
 import ThemeToggle from '../Layout/ThemeToggle';
 import styles from './MobileMenu.module.css';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 interface Props {
   open: boolean;
   onClose: () => void;
@@ -32,7 +34,7 @@ export default function MobileMenu({ open, onClose }: Props) {
         aria-modal="true"
       >
         <div className={styles.header}>
-          <a href="/" className={styles.logo} onClick={onClose}>
+          <a href={BASE_URL} className={styles.logo} onClick={onClose}>
             <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
               <rect width="32" height="32" rx="8" fill="var(--color-primary)" />
               <path d="M10 22L16 10L22 22" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -67,8 +69,8 @@ export default function MobileMenu({ open, onClose }: Props) {
 
         <div className={styles.footer}>
           <ThemeToggle />
-          <a href="/login" className={styles.loginBtn} onClick={onClose}>Log in</a>
-          <a href="/signup" className={styles.ctaBtn} onClick={onClose}>Get Started</a>
+          <a href={`${BASE_URL}login/`} className={styles.loginBtn} onClick={onClose}>Log in</a>
+          <a href={`${BASE_URL}signup/`} className={styles.ctaBtn} onClick={onClose}>Get Started</a>
         </div>
       </nav>
     </div>

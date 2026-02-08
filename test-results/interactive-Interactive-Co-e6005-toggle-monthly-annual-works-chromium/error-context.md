@@ -1,0 +1,336 @@
+# Page snapshot
+
+```yaml
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - heading "Simple, transparent pricing" [level=1] [ref=e4]
+    - paragraph [ref=e5]: No hidden fees. Start free, upgrade when you're ready.
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - heading "Simple, transparent pricing" [level=2] [ref=e10]
+      - paragraph [ref=e11]: No hidden fees. No surprises. Pick a plan that works for you.
+      - generic [ref=e12]:
+        - button "Monthly" [ref=e13] [cursor=pointer]
+        - button "AnnualSave 20%" [active] [ref=e14] [cursor=pointer]
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "Starter" [level=3] [ref=e17]
+        - paragraph [ref=e18]: Perfect for side projects and MVPs.
+        - generic [ref=e19]:
+          - generic [ref=e20]: $
+          - generic [ref=e21]: "15"
+          - generic [ref=e22]: /month
+        - list [ref=e23]:
+          - listitem [ref=e24]:
+            - img [ref=e25]
+            - text: Up to 1,000 users
+          - listitem [ref=e27]:
+            - img [ref=e28]
+            - text: 5 GB storage
+          - listitem [ref=e30]:
+            - img [ref=e31]
+            - text: Basic analytics
+          - listitem [ref=e33]:
+            - img [ref=e34]
+            - text: Email support
+          - listitem [ref=e36]:
+            - img [ref=e37]
+            - text: API access
+          - listitem [ref=e39]:
+            - img [ref=e40]
+            - text: 1 team member
+        - link "Start Free Trial" [ref=e42] [cursor=pointer]:
+          - /url: /signup
+      - generic [ref=e43]:
+        - generic [ref=e44]: Most Popular
+        - heading "Pro" [level=3] [ref=e45]
+        - paragraph [ref=e46]: For growing teams who need more power.
+        - generic [ref=e47]:
+          - generic [ref=e48]: $
+          - generic [ref=e49]: "39"
+          - generic [ref=e50]: /month
+        - list [ref=e51]:
+          - listitem [ref=e52]:
+            - img [ref=e53]
+            - text: Up to 25,000 users
+          - listitem [ref=e55]:
+            - img [ref=e56]
+            - text: 50 GB storage
+          - listitem [ref=e58]:
+            - img [ref=e59]
+            - text: Advanced analytics
+          - listitem [ref=e61]:
+            - img [ref=e62]
+            - text: Priority support
+          - listitem [ref=e64]:
+            - img [ref=e65]
+            - text: API access
+          - listitem [ref=e67]:
+            - img [ref=e68]
+            - text: Up to 10 team members
+          - listitem [ref=e70]:
+            - img [ref=e71]
+            - text: Custom integrations
+          - listitem [ref=e73]:
+            - img [ref=e74]
+            - text: SSO / SAML
+        - link "Start Free Trial" [ref=e76] [cursor=pointer]:
+          - /url: /signup
+      - generic [ref=e77]:
+        - heading "Enterprise" [level=3] [ref=e78]
+        - paragraph [ref=e79]: For organizations that need scale and control.
+        - generic [ref=e80]:
+          - generic [ref=e81]: $
+          - generic [ref=e82]: "119"
+          - generic [ref=e83]: /month
+        - list [ref=e84]:
+          - listitem [ref=e85]:
+            - img [ref=e86]
+            - text: Unlimited users
+          - listitem [ref=e88]:
+            - img [ref=e89]
+            - text: 500 GB storage
+          - listitem [ref=e91]:
+            - img [ref=e92]
+            - text: Enterprise analytics
+          - listitem [ref=e94]:
+            - img [ref=e95]
+            - text: Dedicated support
+          - listitem [ref=e97]:
+            - img [ref=e98]
+            - text: API access
+          - listitem [ref=e100]:
+            - img [ref=e101]
+            - text: Unlimited team members
+          - listitem [ref=e103]:
+            - img [ref=e104]
+            - text: Custom integrations
+          - listitem [ref=e106]:
+            - img [ref=e107]
+            - text: SSO / SAML
+          - listitem [ref=e109]:
+            - img [ref=e110]
+            - text: SLA guarantee
+          - listitem [ref=e112]:
+            - img [ref=e113]
+            - text: Custom contracts
+        - link "Contact Sales" [ref=e115] [cursor=pointer]:
+          - /url: /contact
+  - generic [ref=e118]:
+    - heading "Compare plans in detail" [level=2] [ref=e119]
+    - table [ref=e120]:
+      - rowgroup [ref=e121]:
+        - row "Feature Starter Pro Enterprise" [ref=e122]:
+          - columnheader "Feature" [ref=e123]
+          - columnheader "Starter" [ref=e124]
+          - columnheader "Pro" [ref=e125]
+          - columnheader "Enterprise" [ref=e126]
+      - rowgroup [ref=e127]:
+        - row "Core Features" [ref=e128]:
+          - cell "Core Features" [ref=e129]
+        - row "Users 1,000 25,000 Unlimited" [ref=e130]:
+          - cell "Users" [ref=e131]
+          - cell "1,000" [ref=e132]
+          - cell "25,000" [ref=e133]
+          - cell "Unlimited" [ref=e134]
+        - row "Storage 5 GB 50 GB 500 GB" [ref=e135]:
+          - cell "Storage" [ref=e136]
+          - cell "5 GB" [ref=e137]
+          - cell "50 GB" [ref=e138]
+          - cell "500 GB" [ref=e139]
+        - row "API Access" [ref=e140]:
+          - cell "API Access" [ref=e141]
+          - cell [ref=e142]:
+            - img [ref=e143]
+          - cell [ref=e145]:
+            - img [ref=e146]
+          - cell [ref=e148]:
+            - img [ref=e149]
+        - row "Webhooks" [ref=e151]:
+          - cell "Webhooks" [ref=e152]
+          - cell [ref=e153]:
+            - img [ref=e154]
+          - cell [ref=e157]:
+            - img [ref=e158]
+          - cell [ref=e160]:
+            - img [ref=e161]
+        - row "Custom domain" [ref=e163]:
+          - cell "Custom domain" [ref=e164]
+          - cell [ref=e165]:
+            - img [ref=e166]
+          - cell [ref=e169]:
+            - img [ref=e170]
+          - cell [ref=e172]:
+            - img [ref=e173]
+        - row "Analytics" [ref=e175]:
+          - cell "Analytics" [ref=e176]
+        - row "Basic dashboard" [ref=e177]:
+          - cell "Basic dashboard" [ref=e178]
+          - cell [ref=e179]:
+            - img [ref=e180]
+          - cell [ref=e182]:
+            - img [ref=e183]
+          - cell [ref=e185]:
+            - img [ref=e186]
+        - row "Advanced reports" [ref=e188]:
+          - cell "Advanced reports" [ref=e189]
+          - cell [ref=e190]:
+            - img [ref=e191]
+          - cell [ref=e194]:
+            - img [ref=e195]
+          - cell [ref=e197]:
+            - img [ref=e198]
+        - row "Custom events" [ref=e200]:
+          - cell "Custom events" [ref=e201]
+          - cell [ref=e202]:
+            - img [ref=e203]
+          - cell [ref=e206]:
+            - img [ref=e207]
+          - cell [ref=e209]:
+            - img [ref=e210]
+        - row "Data export" [ref=e212]:
+          - cell "Data export" [ref=e213]
+          - cell [ref=e214]:
+            - img [ref=e215]
+          - cell [ref=e218]:
+            - img [ref=e219]
+          - cell [ref=e221]:
+            - img [ref=e222]
+        - row "Real-time analytics" [ref=e224]:
+          - cell "Real-time analytics" [ref=e225]
+          - cell [ref=e226]:
+            - img [ref=e227]
+          - cell [ref=e230]:
+            - img [ref=e231]
+          - cell [ref=e234]:
+            - img [ref=e235]
+        - row "Security & Compliance" [ref=e237]:
+          - cell "Security & Compliance" [ref=e238]
+        - row "SSL encryption" [ref=e239]:
+          - cell "SSL encryption" [ref=e240]
+          - cell [ref=e241]:
+            - img [ref=e242]
+          - cell [ref=e244]:
+            - img [ref=e245]
+          - cell [ref=e247]:
+            - img [ref=e248]
+        - row "Two-factor auth" [ref=e250]:
+          - cell "Two-factor auth" [ref=e251]
+          - cell [ref=e252]:
+            - img [ref=e253]
+          - cell [ref=e255]:
+            - img [ref=e256]
+          - cell [ref=e258]:
+            - img [ref=e259]
+        - row "SSO / SAML" [ref=e261]:
+          - cell "SSO / SAML" [ref=e262]
+          - cell [ref=e263]:
+            - img [ref=e264]
+          - cell [ref=e267]:
+            - img [ref=e268]
+          - cell [ref=e270]:
+            - img [ref=e271]
+        - row "Audit logs" [ref=e273]:
+          - cell "Audit logs" [ref=e274]
+          - cell [ref=e275]:
+            - img [ref=e276]
+          - cell [ref=e279]:
+            - img [ref=e280]
+          - cell [ref=e283]:
+            - img [ref=e284]
+        - row "SOC 2 compliance" [ref=e286]:
+          - cell "SOC 2 compliance" [ref=e287]
+          - cell [ref=e288]:
+            - img [ref=e289]
+          - cell [ref=e292]:
+            - img [ref=e293]
+          - cell [ref=e296]:
+            - img [ref=e297]
+        - row "Custom BAA" [ref=e299]:
+          - cell "Custom BAA" [ref=e300]
+          - cell [ref=e301]:
+            - img [ref=e302]
+          - cell [ref=e305]:
+            - img [ref=e306]
+          - cell [ref=e309]:
+            - img [ref=e310]
+        - row "Support" [ref=e312]:
+          - cell "Support" [ref=e313]
+        - row "Email support" [ref=e314]:
+          - cell "Email support" [ref=e315]
+          - cell [ref=e316]:
+            - img [ref=e317]
+          - cell [ref=e319]:
+            - img [ref=e320]
+          - cell [ref=e322]:
+            - img [ref=e323]
+        - row "Priority support" [ref=e325]:
+          - cell "Priority support" [ref=e326]
+          - cell [ref=e327]:
+            - img [ref=e328]
+          - cell [ref=e331]:
+            - img [ref=e332]
+          - cell [ref=e334]:
+            - img [ref=e335]
+        - row "Dedicated manager" [ref=e337]:
+          - cell "Dedicated manager" [ref=e338]
+          - cell [ref=e339]:
+            - img [ref=e340]
+          - cell [ref=e343]:
+            - img [ref=e344]
+          - cell [ref=e347]:
+            - img [ref=e348]
+        - row "SLA guarantee" [ref=e350]:
+          - cell "SLA guarantee" [ref=e351]
+          - cell [ref=e352]:
+            - img [ref=e353]
+          - cell [ref=e356]:
+            - img [ref=e357]
+          - cell [ref=e360]:
+            - img [ref=e361]
+        - row "Custom training" [ref=e363]:
+          - cell "Custom training" [ref=e364]
+          - cell [ref=e365]:
+            - img [ref=e366]
+          - cell [ref=e369]:
+            - img [ref=e370]
+          - cell [ref=e373]:
+            - img [ref=e374]
+  - generic [ref=e378]:
+    - heading "Frequently asked questions" [level=2] [ref=e379]
+    - generic [ref=e380]:
+      - generic [ref=e381]:
+        - button "What is included in the free trial?" [ref=e382] [cursor=pointer]:
+          - text: What is included in the free trial?
+          - img [ref=e383]
+        - paragraph [ref=e384]: The 14-day free trial includes full access to all features of your chosen plan. No credit card required to start. You can upgrade, downgrade, or cancel at any time during the trial.
+      - generic [ref=e385]:
+        - button "Can I switch plans later?" [ref=e386] [cursor=pointer]:
+          - text: Can I switch plans later?
+          - img [ref=e387]
+        - paragraph [ref=e388]: Yes! You can upgrade or downgrade your plan at any time. When upgrading, you will be charged the prorated difference. When downgrading, the remaining balance will be credited to your account.
+      - generic [ref=e389]:
+        - button "Do you offer refunds?" [ref=e390] [cursor=pointer]:
+          - text: Do you offer refunds?
+          - img [ref=e391]
+        - paragraph [ref=e392]: We offer a 30-day money-back guarantee on all plans. If you are not satisfied with Velocity Pro, contact our support team for a full refund — no questions asked.
+      - generic [ref=e393]:
+        - button "What payment methods do you accept?" [ref=e394] [cursor=pointer]:
+          - text: What payment methods do you accept?
+          - img [ref=e395]
+        - paragraph [ref=e396]: We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and wire transfers for Enterprise plans. All payments are processed securely through Stripe.
+      - generic [ref=e397]:
+        - button "Is there a discount for annual billing?" [ref=e398] [cursor=pointer]:
+          - text: Is there a discount for annual billing?
+          - img [ref=e399]
+        - paragraph [ref=e400]: Yes! When you choose annual billing, you save approximately 20% compared to monthly billing. The discount is applied automatically at checkout.
+      - generic [ref=e401]:
+        - button "Do you offer custom Enterprise plans?" [ref=e402] [cursor=pointer]:
+          - text: Do you offer custom Enterprise plans?
+          - img [ref=e403]
+        - paragraph [ref=e404]: Absolutely. Our Enterprise plan is fully customizable — dedicated infrastructure, custom SLAs, priority support, and bespoke integrations. Contact our sales team to discuss your needs.
+    - generic [ref=e405]:
+      - paragraph [ref=e406]: Still have questions?
+      - link "Contact us" [ref=e407] [cursor=pointer]:
+        - /url: /contact
+```

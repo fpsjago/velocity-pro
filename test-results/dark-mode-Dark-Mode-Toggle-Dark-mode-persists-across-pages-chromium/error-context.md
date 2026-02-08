@@ -1,0 +1,181 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation "Main navigation" [ref=e4]:
+        - link "Velocity Pro home" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - generic [ref=e9]: Velocity
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - button "Features" [ref=e13] [cursor=pointer]:
+              - text: Features
+              - img [ref=e14]
+          - listitem [ref=e16]:
+            - link "Pricing" [ref=e17] [cursor=pointer]:
+              - /url: /pricing
+          - listitem [ref=e18]:
+            - link "About" [ref=e19] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e20]:
+            - link "Blog" [ref=e21] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e22]:
+            - link "Docs" [ref=e23] [cursor=pointer]:
+              - /url: /docs
+        - generic [ref=e24]:
+          - button "Switch to dark mode" [ref=e25] [cursor=pointer]:
+            - img [ref=e26]
+          - link "Log in" [ref=e28] [cursor=pointer]:
+            - /url: /login
+          - link "Get Started" [ref=e29] [cursor=pointer]:
+            - /url: /signup
+    - generic:
+      - dialog:
+        - generic:
+          - link:
+            - /url: /
+            - img
+            - generic: Velocity
+          - button:
+            - img
+        - list:
+          - listitem:
+            - link:
+              - /url: /features
+              - text: Features
+            - list:
+              - listitem:
+                - link:
+                  - /url: /features#analytics
+                  - text: Analytics
+              - listitem:
+                - link:
+                  - /url: /features#automation
+                  - text: Automation
+              - listitem:
+                - link:
+                  - /url: /features#integrations
+                  - text: Integrations
+              - listitem:
+                - link:
+                  - /url: /features#security
+                  - text: Security
+          - listitem:
+            - link:
+              - /url: /pricing
+              - text: Pricing
+          - listitem:
+            - link:
+              - /url: /about
+              - text: About
+          - listitem:
+            - link:
+              - /url: /blog
+              - text: Blog
+          - listitem:
+            - link:
+              - /url: /docs
+              - text: Docs
+        - generic:
+          - button:
+            - img
+          - link:
+            - /url: /login
+            - text: Log in
+          - link:
+            - /url: /signup
+            - text: Get Started
+  - main [ref=e30]:
+    - generic [ref=e33]:
+      - generic [ref=e34]: Now in Beta
+      - heading "Ship your SaaS 10x faster" [level=1] [ref=e35]
+      - paragraph [ref=e36]: The premium Astro template with 48 components, 12 pages, 3 themes, and dark mode. Built for founders who ship.
+      - generic [ref=e37]:
+        - link "Get Started Free" [ref=e38] [cursor=pointer]:
+          - /url: /signup
+        - link "See Features" [ref=e39] [cursor=pointer]:
+          - /url: /features
+    - generic [ref=e43]:
+      - heading "Everything you need" [level=2] [ref=e44]
+      - paragraph [ref=e45]: 48 production-ready components. 12 pages. 3 color themes. Dark mode. View transitions. Zero Tailwind.
+  - contentinfo [ref=e46]:
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - link "Velocity Pro home" [ref=e50] [cursor=pointer]:
+            - /url: /
+            - img [ref=e51]
+            - generic [ref=e54]: Velocity
+          - paragraph [ref=e55]: Ship faster. Convert better. The SaaS template that sells.
+          - generic [ref=e56]:
+            - link "Twitter" [ref=e57] [cursor=pointer]:
+              - /url: "#"
+            - link "GitHub" [ref=e58] [cursor=pointer]:
+              - /url: "#"
+            - link "LinkedIn" [ref=e59] [cursor=pointer]:
+              - /url: "#"
+            - link "Discord" [ref=e60] [cursor=pointer]:
+              - /url: "#"
+        - navigation "Footer navigation" [ref=e61]:
+          - generic [ref=e62]:
+            - heading "Product" [level=4] [ref=e63]
+            - list [ref=e64]:
+              - listitem [ref=e65]:
+                - link "Features" [ref=e66] [cursor=pointer]:
+                  - /url: /features
+              - listitem [ref=e67]:
+                - link "Pricing" [ref=e68] [cursor=pointer]:
+                  - /url: /pricing
+              - listitem [ref=e69]:
+                - link "Changelog" [ref=e70] [cursor=pointer]:
+                  - /url: /changelog
+              - listitem [ref=e71]:
+                - link "Docs" [ref=e72] [cursor=pointer]:
+                  - /url: /docs
+          - generic [ref=e73]:
+            - heading "Company" [level=4] [ref=e74]
+            - list [ref=e75]:
+              - listitem [ref=e76]:
+                - link "About" [ref=e77] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e78]:
+                - link "Blog" [ref=e79] [cursor=pointer]:
+                  - /url: /blog
+              - listitem [ref=e80]:
+                - link "Case Studies" [ref=e81] [cursor=pointer]:
+                  - /url: /case-studies
+              - listitem [ref=e82]:
+                - link "Contact" [ref=e83] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=e84]:
+            - heading "Resources" [level=4] [ref=e85]
+            - list [ref=e86]:
+              - listitem [ref=e87]:
+                - link "FAQ" [ref=e88] [cursor=pointer]:
+                  - /url: /faq
+              - listitem [ref=e89]:
+                - link "Support" [ref=e90] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=e91]:
+                - link "Status" [ref=e92] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e93]:
+                - link "API" [ref=e94] [cursor=pointer]:
+                  - /url: /docs
+      - generic [ref=e95]:
+        - paragraph [ref=e96]: © 2026 Velocity Pro. All rights reserved.
+        - generic [ref=e97]:
+          - link "Privacy" [ref=e98] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms" [ref=e99] [cursor=pointer]:
+            - /url: "#"
+          - link "Cookies" [ref=e100] [cursor=pointer]:
+            - /url: "#"
+  - generic [ref=e101]:
+    - button "Back to top":
+      - img
+```

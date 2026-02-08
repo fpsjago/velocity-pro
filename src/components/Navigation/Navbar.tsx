@@ -6,6 +6,8 @@ import NavDropdown from './NavDropdown';
 import MobileMenu from './MobileMenu';
 import styles from './Navbar.module.css';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,7 +31,7 @@ export default function Navbar() {
     <>
       <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
         <nav className={styles.inner} aria-label="Main navigation">
-          <a href="/" className={styles.logo} aria-label="Velocity Pro home">
+          <a href={BASE_URL} className={styles.logo} aria-label="Velocity Pro home">
             <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
               <rect width="32" height="32" rx="8" fill="var(--color-primary)" />
               <path d="M10 22L16 10L22 22" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -51,8 +53,8 @@ export default function Navbar() {
 
           <div className={styles.actions}>
             <ThemeToggle />
-            <a href="/login" className={styles.loginLink}>Log in</a>
-            <a href="/signup" className={styles.ctaButton}>Get Started</a>
+            <a href={`${BASE_URL}login/`} className={styles.loginLink}>Log in</a>
+            <a href={`${BASE_URL}signup/`} className={styles.ctaButton}>Get Started</a>
             <button
               className={styles.menuButton}
               onClick={() => setMobileOpen(true)}

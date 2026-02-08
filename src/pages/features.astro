@@ -2,6 +2,8 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import Section from '../components/Layout/Section.astro';
 import Container from '../components/Layout/Container.astro';
+
+const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <DefaultLayout title="Features" description="Discover all features of Velocity Pro.">
@@ -60,7 +62,7 @@ import Container from '../components/Layout/Container.astro';
         <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 1.5rem;">
           Ready to get started?
         </h2>
-        <a href="/signup" style="display: inline-flex; align-items: center; padding: 0.75rem 2rem; background: var(--color-primary); color: #fff; font-weight: 600; border-radius: var(--radius-md); text-decoration: none;">
+        <a href={`${BASE_URL}signup/`} style="display: inline-flex; align-items: center; padding: 0.75rem 2rem; background: var(--color-primary); color: #fff; font-weight: 600; border-radius: var(--radius-md); text-decoration: none;">
           Start Free Trial
         </a>
       </div>
