@@ -1,53 +1,74 @@
 ---
-// About page — Velocity Pro
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import Section from '../components/Layout/Section.astro';
+import Container from '../components/Layout/Container.astro';
+import Divider from '../components/Layout/Divider.astro';
 ---
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — Velocity Pro</title>
-</head>
-<body>
-  <main>
-    <section style="text-align:center;padding:5rem 1.5rem 2rem;">
-      <h1 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;">About Velocity</h1>
-      <p style="color:#64748b;max-width:640px;margin:1rem auto 0;line-height:1.6;">We're a small team of builders, designers, and engineers on a mission to help SaaS teams ship faster and convert better.</p>
-    </section>
 
-    <div id="stats-bar"></div>
-    <div id="team-featured"></div>
-    <div id="team-grid"></div>
-    <div id="testimonial-carousel"></div>
-    <div id="logo-cloud"></div>
-  </main>
+<DefaultLayout title="About" description="Learn about the team behind Velocity Pro.">
+  <Section padding="lg" style="padding-top: 8rem; background: linear-gradient(180deg, transparent 0%, var(--color-muted) 50%, transparent 100%);">
+    <Container size="lg">
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <h1 style="font-size: var(--font-display); font-weight: 800; margin-bottom: 1.5rem;">
+          About <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Velocity</span>
+        </h1>
+        <p style="font-size: var(--font-h4); color: var(--color-text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.6;">
+          We're a team of builders, designers, and engineers on a mission to help SaaS teams ship faster and convert better.
+        </p>
+      </div>
+    </Container>
+  </Section>
 
-  <script>
-    import { createElement } from 'react';
-    import { createRoot } from 'react-dom/client';
-    import StatsBar from '../components/SocialProof/StatsBar';
-    import TeamFeatured from '../components/Team/TeamFeatured';
-    import TeamGrid from '../components/Team/TeamGrid';
-    import TestimonialCarousel from '../components/SocialProof/TestimonialCarousel';
-    import LogoCloud from '../components/SocialProof/LogoCloud';
-    import { stats } from '../data/stats';
-    import { team } from '../data/team';
-    import { testimonials, logos } from '../data/testimonials';
+  <Divider variant="gradient" />
 
-    createRoot(document.getElementById('stats-bar')!).render(
-      createElement(StatsBar, { stats })
-    );
-    createRoot(document.getElementById('team-featured')!).render(
-      createElement(TeamFeatured, { members: team.filter(m => m.featured) })
-    );
-    createRoot(document.getElementById('team-grid')!).render(
-      createElement(TeamGrid, { members: team })
-    );
-    createRoot(document.getElementById('testimonial-carousel')!).render(
-      createElement(TestimonialCarousel, { testimonials })
-    );
-    createRoot(document.getElementById('logo-cloud')!).render(
-      createElement(LogoCloud, { logos })
-    );
-  </script>
-</body>
-</html>
+  <Section padding="lg">
+    <Container size="lg">
+      <div style="text-align: center;">
+        <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 3rem;">
+          Our <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">story</span>
+        </h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: left; line-height: 1.8; color: var(--color-text-secondary);">
+          <p style="margin-bottom: 1.5rem;">
+            Velocity Pro was born from frustration. We spent years building SaaS products and watching talented teams struggle with the same problems: slow development cycles, generic landing pages, and templates that looked AI-generated.
+          </p>
+          <p style="margin-bottom: 1.5rem;">
+            We built Velocity Pro to solve this. Every component is designed with intention. Every animation serves a purpose. Every gradient is carefully crafted. This isn't another cookie-cutter template—it's a foundation for building products that stand out.
+          </p>
+          <p>
+            Today, Velocity Pro powers landing pages for teams around the world, helping them ship faster and convert better. We're just getting started.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Divider variant="wave" />
+
+  <Section variant="muted" padding="lg">
+    <Container size="lg">
+      <div style="text-align: center;">
+        <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 1.5rem;">
+          Built for <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">modern teams</span>
+        </h2>
+        <p style="font-size: var(--font-h5); color: var(--color-text-secondary); max-width: 600px; margin: 0 auto 3rem;">
+          Empowering builders, designers, and developers to create exceptional products.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
+          <div style="padding: 2.5rem 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+            <div style="font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">10k+</div>
+            <div style="font-weight: 500; color: var(--color-text-secondary);">Active Users</div>
+          </div>
+          <div style="padding: 2.5rem 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+            <div style="font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">99.9%</div>
+            <div style="font-weight: 500; color: var(--color-text-secondary);">Uptime SLA</div>
+          </div>
+          <div style="padding: 2.5rem 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+            <div style="font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">150+</div>
+            <div style="font-weight: 500; color: var(--color-text-secondary);">Countries</div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</DefaultLayout>

@@ -1,9 +1,10 @@
 import { useCountUp } from '../../hooks/useCountUp';
 import type { Stat } from '../../data/stats';
+import { stats as defaultStats } from '../../data/stats';
 import styles from './StatsBar.module.css';
 
 interface Props {
-  stats: Stat[];
+  stats?: Stat[];
 }
 
 function StatItem({ stat }: { stat: Stat }) {
@@ -19,7 +20,7 @@ function StatItem({ stat }: { stat: Stat }) {
   );
 }
 
-export default function StatsBar({ stats }: Props) {
+export default function StatsBar({ stats = defaultStats }: Props) {
   return (
     <section className={styles.section}>
       <div className={styles.container}>

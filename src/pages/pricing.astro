@@ -1,42 +1,102 @@
 ---
-// Pricing page — Velocity Pro
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import Section from '../components/Layout/Section.astro';
+import Container from '../components/Layout/Container.astro';
+import Divider from '../components/Layout/Divider.astro';
+
+const BASE_URL = import.meta.env.BASE_URL;
 ---
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pricing — Velocity Pro</title>
-</head>
-<body>
-  <main>
-    <section style="text-align:center;padding:5rem 1.5rem 2rem;">
-      <h1 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;">Simple, transparent pricing</h1>
-      <p style="color:#64748b;max-width:560px;margin:1rem auto 0;">No hidden fees. Start free, upgrade when you're ready.</p>
-    </section>
 
-    <div id="pricing-cards"></div>
-    <div id="pricing-comparison"></div>
-    <div id="pricing-faq"></div>
-  </main>
+<DefaultLayout title="Pricing" description="Simple, transparent pricing. No hidden fees.">
+  <Section padding="lg" style="padding-top: 8rem; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(102, 126, 234, 0.15), transparent);">
+    <Container size="lg">
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <h1 style="font-size: var(--font-display); font-weight: 800; margin-bottom: 1.5rem;">
+          Simple, <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">transparent</span> pricing
+        </h1>
+        <p style="font-size: var(--font-h4); color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">
+          No hidden fees. Start free, upgrade when you're ready.
+        </p>
+      </div>
+    </Container>
+  </Section>
 
-  <script>
-    import { createElement } from 'react';
-    import { createRoot } from 'react-dom/client';
-    import PricingCards from '../components/Pricing/PricingCards';
-    import PricingComparison from '../components/Pricing/PricingComparison';
-    import PricingFAQ from '../components/Pricing/PricingFAQ';
-    import { plans, comparisonFeatures } from '../data/pricing';
-    import { pricingFaqItems } from '../data/faq';
+  <Section variant="muted" padding="lg">
+    <Container size="lg">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+        
+        <div style="padding: 3rem 2.5rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border); transition: all 0.3s ease;">
+          <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.5rem;">Starter</h3>
+          <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">Perfect for side projects</p>
+          <div style="margin-bottom: 2rem;">
+            <span style="font-size: 3rem; font-weight: 900;">$0</span>
+            <span style="color: var(--color-text-secondary);">/month</span>
+          </div>
+          <a href={`${BASE_URL}signup/`} style="display: block; text-align: center; padding: 0.875rem; background: var(--color-muted); color: var(--color-text); font-weight: 600; border-radius: var(--radius-md); text-decoration: none; transition: all 0.3s ease;">Get Started</a>
+          <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; gap: 0.5rem; color: var(--color-text-secondary);"><span>✓</span> <span>1 project</span></li>
+              <li style="display: flex; gap: 0.5rem; color: var(--color-text-secondary);"><span>✓</span> <span>Basic features</span></li>
+              <li style="display: flex; gap: 0.5rem; color: var(--color-text-secondary);"><span>✓</span> <span>Community support</span></li>
+            </ul>
+          </div>
+        </div>
 
-    createRoot(document.getElementById('pricing-cards')!).render(
-      createElement(PricingCards, { plans })
-    );
-    createRoot(document.getElementById('pricing-comparison')!).render(
-      createElement(PricingComparison, { features: comparisonFeatures })
-    );
-    createRoot(document.getElementById('pricing-faq')!).render(
-      createElement(PricingFAQ, { items: pricingFaqItems })
-    );
-  </script>
-</body>
-</html>
+        <div style="padding: 3rem 2.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-lg); box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4); transform: scale(1.05); color: #fff; position: relative;">
+          <div style="position: absolute; top: 1rem; right: 1rem; padding: 0.375rem 0.75rem; background: rgba(255, 255, 255, 0.2); border-radius: 50px; font-size: 0.875rem; font-weight: 600;">Popular</div>
+          <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.5rem;">Pro</h3>
+          <p style="opacity: 0.9; margin-bottom: 2rem;">For growing teams</p>
+          <div style="margin-bottom: 2rem;">
+            <span style="font-size: 3rem; font-weight: 900;">$29</span>
+            <span style="opacity: 0.9;">/month</span>
+          </div>
+          <a href={`${BASE_URL}signup/`} style="display: block; text-align: center; padding: 0.875rem; background: #fff; color: #667eea; font-weight: 600; border-radius: var(--radius-md); text-decoration: none; transition: all 0.3s ease;">Start Free Trial</a>
+          <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; gap: 0.5rem;"><span>✓</span> <span>Unlimited projects</span></li>
+              <li style="display: flex; gap: 0.5rem;"><span>✓</span> <span>All premium features</span></li>
+              <li style="display: flex; gap: 0.5rem;"><span>✓</span> <span>Priority support</span></li>
+              <li style="display: flex; gap: 0.5rem;"><span>✓</span> <span>Advanced analytics</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="padding: 3rem 2.5rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border); transition: all 0.3s ease;">
+          <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.5rem;">Enterprise</h3>
+          <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">For large organizations</p>
+          <div style="margin-bottom: 2rem;">
+            <span style="font-size: 3rem; font-weight: 900;">Custom</span>
+          </div>
+          <a href={`${BASE_URL}contact/`} style="display: block; text-align: center; padding: 0.875rem; background: var(--color-muted); color: var(--color-text); font-weight: 600; border-radius: var(--radius-md); text-decoration: none; transition: all 0.3s ease;">Contact Sales</a>
+          <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; gap: 0.5rem; color: var(--color-text-secondary);"><span>✓</span> <span>Unlimited everything</span></li>
+              <li style="display: flex; gap: 0.5rem; color: var(--color-text-secondary);"><span>✓</span> <span>Dedicated support</span></li>
+              <li style="display: flex; gap: 0.5rem; color: var(--color-text-secondary);"><span>✓</span> <span>Custom integrations</span></li>
+              <li style="display: flex; gap: 0.5rem; color: var(--color-text-secondary);"><span>✓</span> <span>SLA guarantee</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </Section>
+
+  <Divider variant="gradient" />
+
+  <Section padding="lg">
+    <Container size="md">
+      <div style="text-align: center; padding: 3rem 0;">
+        <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 1rem;">
+          Ready to get started?
+        </h2>
+        <p style="font-size: var(--font-h5); color: var(--color-text-secondary); margin-bottom: 2rem;">
+          Join thousands of teams building faster.
+        </p>
+        <a href={`${BASE_URL}signup/`} style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; font-weight: 600; font-size: 1.125rem; border-radius: 12px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);">
+          Start Free Trial
+        </a>
+      </div>
+    </Container>
+  </Section>
+</DefaultLayout>
