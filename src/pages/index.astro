@@ -1,48 +1,45 @@
 ---
-import DefaultLayout from '../layouts/DefaultLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroHome from '../components/Hero/HeroHome';
 import Section from '../components/Layout/Section.astro';
 import Container from '../components/Layout/Container.astro';
-import Badge from '../components/Layout/Badge.astro';
 import Divider from '../components/Layout/Divider.astro';
 
 const BASE_URL = import.meta.env.BASE_URL;
 ---
 
-<DefaultLayout title="Home" description="Ship your SaaS 10x faster with Velocity Pro.">
-  <Section padding="lg">
-    <Container size="lg">
-      <div style="text-align: center; padding-top: 6rem;">
-        <Badge variant="primary">Now in Beta</Badge>
-        <h1 style="font-size: var(--font-display); font-weight: 800; margin-top: 1.5rem; margin-bottom: 1.5rem;">
-          Ship your SaaS <span class="gradient-text">10x faster</span>
-        </h1>
-        <p style="font-size: var(--font-h4); color: var(--color-text-secondary); max-width: 640px; margin: 0 auto 2rem;">
-          The premium Astro template with 48 components, 12 pages, 3 themes, and dark mode. Built for founders who ship.
-        </p>
-        <div style="display: flex; gap: 1rem; justify-content: center;">
-          <a href={`${BASE_URL}signup/`} style="display: inline-flex; align-items: center; padding: 0.75rem 2rem; background: var(--color-primary); color: #fff; font-weight: 600; border-radius: var(--radius-md); text-decoration: none;">
-            Get Started Free
-          </a>
-          <a href={`${BASE_URL}features/`} style="display: inline-flex; align-items: center; padding: 0.75rem 2rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); text-decoration: none; color: var(--color-text); font-weight: 500;">
-            See Features
-          </a>
-        </div>
-      </div>
-    </Container>
-  </Section>
+<BaseLayout title="Home" description="Ship your SaaS 10x faster with Velocity Pro.">
+  <HeroHome client:load />
 
   <Divider variant="gradient" />
 
   <Section variant="muted" padding="lg">
     <Container size="lg">
-      <div style="text-align: center;">
+      <div style="text-align: center; padding: 3rem 0;">
         <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 1rem;">
           Everything you need
         </h2>
-        <p style="color: var(--color-text-secondary); max-width: 540px; margin: 0 auto;">
-          48 production-ready components. 12 pages. 3 color themes. Dark mode. View transitions. Zero Tailwind.
+        <p style="color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; margin-bottom: 3rem;">
+          Production-ready components with modern animations, particle effects, and premium design.
         </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+          <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+            <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">Particle Effects</h3>
+            <p style="color: var(--color-text-secondary);">Beautiful animated particle backgrounds with tsParticles.</p>
+          </div>
+          
+          <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+            <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">Gradient Meshes</h3>
+            <p style="color: var(--color-text-secondary);">Premium gradient overlays and animated backgrounds.</p>
+          </div>
+          
+          <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+            <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">Smooth Animations</h3>
+            <p style="color: var(--color-text-secondary);">Scroll-triggered and interactive animations throughout.</p>
+          </div>
+        </div>
       </div>
     </Container>
   </Section>
-</DefaultLayout>
+</BaseLayout>
