@@ -2,13 +2,16 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import Section from '../components/Layout/Section.astro';
 import Container from '../components/Layout/Container.astro';
+import Divider from '../components/Layout/Divider.astro';
 import FeatureGrid from '../components/Features/FeatureGrid';
+import FeatureBento from '../components/Features/FeatureBento';
+import FeatureShowcase from '../components/Features/FeatureShowcase';
 
 const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <DefaultLayout title="Features" description="Discover all features of Velocity Pro.">
-  <Section padding="lg" style="padding-top: 8rem;">
+  <Section padding="lg" style="padding-top: 8rem; background: linear-gradient(180deg, transparent 0%, var(--color-muted) 100%);">
     <Container size="lg">
       <div style="text-align: center; margin-bottom: 4rem;">
         <h1 style="font-size: var(--font-display); font-weight: 800; margin-bottom: 1.5rem;">
@@ -29,12 +32,49 @@ const BASE_URL = import.meta.env.BASE_URL;
     </Container>
   </Section>
 
+  <Divider variant="gradient" />
+
+  <Section padding="lg">
+    <Container size="lg">
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 1rem;">
+          Built for <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">modern teams</span>
+        </h2>
+        <p style="font-size: var(--font-h5); color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">
+          Asymmetric bento grid layout with gradient accents and hover effects.
+        </p>
+      </div>
+      <FeatureBento client:load />
+    </Container>
+  </Section>
+
+  <Divider variant="wave" />
+
+  <Section variant="muted" padding="lg">
+    <Container size="lg">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 1rem;">
+          Explore by category
+        </h2>
+        <p style="font-size: var(--font-h5); color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">
+          Interactive tabbed showcase with smooth transitions and animations.
+        </p>
+      </div>
+      <FeatureShowcase client:load />
+    </Container>
+  </Section>
+
+  <Divider variant="gradient" />
+
   <Section padding="lg">
     <Container size="md">
       <div style="text-align: center; padding: 4rem 0;">
         <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 1.5rem;">
           Ready to get started?
         </h2>
+        <p style="font-size: var(--font-h5); color: var(--color-text-secondary); margin-bottom: 2rem;">
+          Join thousands of teams building faster with Velocity Pro.
+        </p>
         <a href={`${BASE_URL}signup/`} style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; font-weight: 600; font-size: 1.125rem; border-radius: 12px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);">
           Start Free Trial
         </a>
