@@ -1,0 +1,69 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import Section from '../components/Layout/Section.astro';
+import Container from '../components/Layout/Container.astro';
+---
+
+<DefaultLayout title="Features" description="Discover all features of Velocity Pro.">
+  <Section padding="lg">
+    <Container size="lg">
+      <div style="text-align: center; padding-top: 6rem; padding-bottom: 3rem;">
+        <h1 style="font-size: var(--font-display); font-weight: 800; margin-bottom: 1.5rem;">
+          Features
+        </h1>
+        <p style="font-size: var(--font-h4); color: var(--color-text-secondary); max-width: 640px; margin: 0 auto;">
+          Everything you need to build and ship your SaaS faster.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <Section variant="muted" padding="lg">
+    <Container size="md">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">48 Components</h3>
+          <p style="color: var(--color-text-secondary);">Production-ready React and Astro components for every use case.</p>
+        </div>
+        
+        <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">Dark Mode</h3>
+          <p style="color: var(--color-text-secondary);">Beautiful dark mode on every page with smooth transitions.</p>
+        </div>
+        
+        <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">3 Color Themes</h3>
+          <p style="color: var(--color-text-secondary);">Indigo Night, Ocean Teal, and Sunset Coral themes included.</p>
+        </div>
+        
+        <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">View Transitions</h3>
+          <p style="color: var(--color-text-secondary);">Smooth page transitions with Astro's View Transitions API.</p>
+        </div>
+        
+        <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">TypeScript</h3>
+          <p style="color: var(--color-text-secondary);">Fully typed with TypeScript for better developer experience.</p>
+        </div>
+        
+        <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">CSS Modules</h3>
+          <p style="color: var(--color-text-secondary);">Scoped styles with CSS Modules. Zero Tailwind bloat.</p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section padding="lg">
+    <Container size="md">
+      <div style="text-align: center; padding: 4rem 0;">
+        <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 1.5rem;">
+          Ready to get started?
+        </h2>
+        <a href="/signup" style="display: inline-flex; align-items: center; padding: 0.75rem 2rem; background: var(--color-primary); color: #fff; font-weight: 600; border-radius: var(--radius-md); text-decoration: none;">
+          Start Free Trial
+        </a>
+      </div>
+    </Container>
+  </Section>
+</DefaultLayout>
