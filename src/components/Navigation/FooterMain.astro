@@ -1,0 +1,195 @@
+---
+import { footerNav, socialLinks } from '../../data/navigation';
+---
+
+<footer class="footer" transition:name="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo" aria-label="Velocity Pro home">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="8" fill="var(--color-primary)" />
+            <path d="M10 22L16 10L22 22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Velocity</span>
+        </a>
+        <p class="footer__tagline">Ship faster. Convert better. The SaaS template that sells.</p>
+        <div class="footer__social">
+          {socialLinks.map((link) => (
+            <a href={link.href} class="footer__social-link" aria-label={link.label}>
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <div class="footer__col">
+          <h4 class="footer__heading">Product</h4>
+          <ul class="footer__list">
+            {footerNav.product.map((item) => (
+              <li><a href={item.href} class="footer__link">{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__list">
+            {footerNav.company.map((item) => (
+              <li><a href={item.href} class="footer__link">{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Resources</h4>
+          <ul class="footer__list">
+            {footerNav.resources.map((item) => (
+              <li><a href={item.href} class="footer__link">{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; {new Date().getFullYear()} Velocity Pro. All rights reserved.</p>
+      <div class="footer__legal">
+        {footerNav.legal.map((item) => (
+          <a href={item.href} class="footer__legal-link">{item.label}</a>
+        ))}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-bg-muted);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer__inner {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-5) var(--space-6);
+  }
+
+  .footer__top {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: var(--space-10);
+    margin-bottom: var(--space-10);
+  }
+
+  .footer__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-text);
+    text-decoration: none;
+    margin-bottom: var(--space-3);
+  }
+
+  .footer__tagline {
+    color: var(--color-text-secondary);
+    font-size: var(--font-small);
+    line-height: var(--leading-normal);
+    max-width: 280px;
+    margin-bottom: var(--space-5);
+  }
+
+  .footer__social {
+    display: flex;
+    gap: var(--space-3);
+  }
+
+  .footer__social-link {
+    color: var(--color-text-tertiary);
+    font-size: var(--font-small);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer__social-link:hover {
+    color: var(--color-primary);
+  }
+
+  .footer__nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .footer__heading {
+    font-size: var(--font-small);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    list-style: none;
+  }
+
+  .footer__link {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer__link:hover {
+    color: var(--color-text);
+  }
+
+  .footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer__copyright {
+    color: var(--color-text-tertiary);
+    font-size: var(--font-small);
+  }
+
+  .footer__legal {
+    display: flex;
+    gap: var(--space-5);
+  }
+
+  .footer__legal-link {
+    color: var(--color-text-tertiary);
+    font-size: var(--font-small);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer__legal-link:hover {
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 767px) {
+    .footer__top {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+    .footer__nav {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .footer__bottom {
+      flex-direction: column;
+      gap: var(--space-3);
+      text-align: center;
+    }
+  }
+</style>

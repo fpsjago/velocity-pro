@@ -1,0 +1,119 @@
+---
+import styles from './BlogGrid.module.css';
+
+interface Post {
+  id: string;
+  data: {
+    title: string;
+    excerpt: string;
+    date: string;
+    category: string;
+    author: { name: string; role: string };
+    readTime: string;
+    featured?: boolean;
+    coverImage?: string;
+  };
+}
+
+interface Props {
+  posts: Post[];
+  categories?: string[];
+}
+
+const { posts, categories = ['All', 'Engineering', 'Product', 'Growth', 'Design', 'Company'] } = Astro.props;
+
+const featured = posts.find(p => p.data.featured) || posts[0];
+const rest = posts.filter(p => p.id !== featured?.id);
+---
+
+<section class={styles.container}>
+  <div class={styles.header}>
+    <h1 class={styles.title}>Blog</h1>
+    <p class={styles.subtitle}>Insights on building, scaling, and shipping great software products.</p>
+  </div>
+
+  <div class={styles.filters}>
+    {categories.map((cat, i) => (
+      <button
+        class={`${styles.filterBtn} ${i === 0 ? styles.filterBtnActive : ''}`}
+        data-category={cat}
+      >
+        {cat}
+      </button>
+    ))}
+  </div>
+
+  {featured && (
+    <article class={styles.featured}>
+      <div class={styles.featuredImage}>
+        <div style="width:100%;height:100%;background:linear-gradient(135deg, var(--color-primary-light), var(--color-bg-muted));display:flex;align-items:center;justify-content:center;color:var(--color-text-tertiary);font-size:1.5rem;">
+          📝
+        </div>
+      </div>
+      <div class={styles.featuredContent}>
+        <span class={styles.featuredBadge}>Featured</span>
+        <h2 class={styles.featuredTitle}>
+          <a href={`/blog/${featured.id}`}>{featured.data.title}</a>
+        </h2>
+        <p class={styles.featuredExcerpt}>{featured.data.excerpt}</p>
+        <div class={styles.meta}>
+          <span>{featured.data.author.name}</span>
+          <span>·</span>
+          <span>{featured.data.date}</span>
+          <span>·</span>
+          <span>{featured.data.readTime}</span>
+        </div>
+      </div>
+    </article>
+  )}
+
+  <div class={styles.grid}>
+    {rest.map(post => (
+      <article class={styles.card} data-category={post.data.category}>
+        <div class={styles.cardImage}>
+          <div style="width:100%;height:100%;background:linear-gradient(135deg, var(--color-primary-light), var(--color-bg-muted));display:flex;align-items:center;justify-content:center;color:var(--color-text-tertiary);font-size:1.25rem;">
+            📄
+          </div>
+        </div>
+        <div class={styles.cardBody}>
+          <div class={styles.cardCategory}>{post.data.category}</div>
+          <h3 class={styles.cardTitle}>
+            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+          </h3>
+          <p class={styles.cardExcerpt}>{post.data.excerpt}</p>
+          <div class={styles.meta}>
+            <span>{post.data.author.name}</span>
+            <span>·</span>
+            <span>{post.data.readTime}</span>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-category]').forEach(btn => {
+    if (btn.tagName !== 'BUTTON') return;
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-category');
+      document.querySelectorAll('button[data-category]').forEach(b => {
+        b.classList.remove('filterBtnActive');
+        b.className = b.className.replace(/\S*Active\S*/g, '');
+      });
+      // Re-add active class
+      const classes = btn.className.split(' ');
+      const baseClass = classes[0];
+      btn.className = `${btn.className} ${baseClass.replace('filterBtn', 'filterBtnActive')}`;
+      
+      document.querySelectorAll('article[data-category]').forEach(card => {
+        const cardEl = card as HTMLElement;
+        if (cat === 'All' || card.getAttribute('data-category') === cat) {
+          cardEl.style.display = '';
+        } else {
+          cardEl.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

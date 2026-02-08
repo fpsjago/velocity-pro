@@ -1,0 +1,63 @@
+---
+import styles from './BlogPostStandard.module.css';
+
+interface Props {
+  title: string;
+  category: string;
+  date: string;
+  readTime: string;
+  author: { name: string; role: string };
+  headings?: { depth: number; slug: string; text: string }[];
+}
+
+const { title, category, date, readTime, author, headings = [] } = Astro.props;
+const tocHeadings = headings.filter(h => h.depth <= 3);
+const initials = author.name.split(' ').map(n => n[0]).join('');
+---
+
+<div class={styles.layout}>
+  <main class={styles.main}>
+    <header class={styles.header}>
+      <span class={styles.category}>{category}</span>
+      <h1 class={styles.title}>{title}</h1>
+      <div class={styles.meta}>
+        <div class={styles.authorInfo}>
+          <div class={styles.avatar}>{initials}</div>
+          <div>
+            <div class={styles.authorName}>{author.name}</div>
+            <div>{author.role}</div>
+          </div>
+        </div>
+        <span>·</span>
+        <span>{date}</span>
+        <span>·</span>
+        <span>{readTime}</span>
+      </div>
+    </header>
+
+    <article class="prose">
+      <slot />
+    </article>
+  </main>
+
+  <aside class={styles.sidebar}>
+    {tocHeadings.length > 0 && (
+      <nav>
+        <div class={styles.tocTitle}>On this page</div>
+        <ul class={styles.tocList}>
+          {tocHeadings.map(h => (
+            <li style={h.depth === 3 ? 'padding-left: 1rem' : ''}>
+              <a href={`#${h.slug}`}>{h.text}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
+    <div class={styles.authorCard}>
+      <div class={styles.authorCardTitle}>Written by</div>
+      <div class={styles.authorCardName}>{author.name}</div>
+      <div class={styles.authorCardRole}>{author.role}</div>
+    </div>
+  </aside>
+</div>

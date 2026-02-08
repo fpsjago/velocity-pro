@@ -1,0 +1,34 @@
+/* Theme: Sunset Coral */
+:root {
+  --color-primary: #F97316;
+  --color-primary-hover: #EA580C;
+  --color-primary-light: #FFF7ED;
+  --color-accent: #FB923C;
+  --color-bg: #FFFBF5;
+  --color-bg-muted: #FEF3E2;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #FFF7ED;
+  --color-border: #FED7AA;
+  --color-text: #2E1A0A;
+  --color-text-secondary: #9A6540;
+  --color-text-tertiary: #C08B60;
+  --color-gradient-start: #F97316;
+  --color-gradient-end: #EF4444;
+}
+
+[data-theme="dark"] {
+  --color-primary: #FB923C;
+  --color-primary-hover: #F97316;
+  --color-primary-light: #431407;
+  --color-accent: #FDBA74;
+  --color-bg: #1A0F0A;
+  --color-bg-muted: #2A1A10;
+  --color-surface: #301E12;
+  --color-surface-hover: #3D2518;
+  --color-border: #4A3020;
+  --color-text: #F5E8D8;
+  --color-text-secondary: #C0A080;
+  --color-text-tertiary: #8A6A50;
+  --color-gradient-start: #FB923C;
+  --color-gradient-end: #F87171;
+}

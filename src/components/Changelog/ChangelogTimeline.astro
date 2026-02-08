@@ -1,0 +1,63 @@
+---
+import styles from './ChangelogTimeline.module.css';
+
+interface Change {
+  type: 'feature' | 'fix' | 'improvement' | 'breaking';
+  text: string;
+}
+
+interface Entry {
+  id: string;
+  data: {
+    version: string;
+    date: string;
+    title: string;
+    description: string;
+    changes: Change[];
+  };
+}
+
+interface Props {
+  entries: Entry[];
+}
+
+const { entries } = Astro.props;
+const sorted = [...entries].sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const typeLabels: Record<string, string> = {
+  feature: 'New',
+  fix: 'Fix',
+  improvement: 'Improved',
+  breaking: 'Breaking',
+};
+---
+
+<section class={styles.container}>
+  <div class={styles.header}>
+    <h1 class={styles.title}>Changelog</h1>
+    <p class={styles.subtitle}>All the latest updates, improvements, and fixes.</p>
+  </div>
+
+  <div class={styles.timeline}>
+    {sorted.map(entry => (
+      <article class={styles.entry}>
+        <div class={styles.entryHeader}>
+          <span class={styles.version}>v{entry.data.version}</span>
+          <span class={styles.date}>{entry.data.date}</span>
+        </div>
+        <h2 class={styles.entryTitle}>{entry.data.title}</h2>
+        <p class={styles.entryDesc}>{entry.data.description}</p>
+        <ul class={styles.changes}>
+          {entry.data.changes.map(change => (
+            <li class={styles.change}>
+              <span class={`${styles.changeType} ${styles[change.type]}`}>
+                {typeLabels[change.type]}
+              </span>
+              <span>{change.text}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </div>
+</section>

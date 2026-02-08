@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChangelogTimeline from '../components/Changelog/ChangelogTimeline.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('changelog');
+---
+
+<BaseLayout title="Changelog">
+  <ChangelogTimeline entries={entries} />
+</BaseLayout>

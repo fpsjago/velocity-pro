@@ -1,0 +1,128 @@
+---
+title: Deployment
+description: Deploy Velocity Pro to GitHub Pages, Vercel, Netlify, and more.
+order: 4
+section: Guides
+---
+
+# Deployment
+
+Velocity Pro generates a fully static site that can be deployed anywhere. Here's how to deploy to the most popular platforms.
+
+## GitHub Pages
+
+1. Update `astro.config.mjs`:
+
+```javascript
+export default defineConfig({
+  site: 'https://username.github.io',
+  base: '/repo-name',
+});
+```
+
+2. Create `.github/workflows/deploy.yml`:
+
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
+```
+
+3. Push to `main` — your site deploys automatically.
+
+## Vercel
+
+The easiest option. Just connect your repo:
+
+1. Push your code to GitHub
+2. Go to [vercel.com/new](https://vercel.com/new)
+3. Import your repository
+4. Vercel auto-detects Astro — click **Deploy**
+
+No configuration needed. Vercel handles everything.
+
+## Netlify
+
+1. Push your code to GitHub
+2. Go to [app.netlify.com](https://app.netlify.com)
+3. Click **"Add new site"** → **"Import an existing project"**
+4. Select your repository
+5. Build settings:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+
+## Cloudflare Pages
+
+```bash
+# Install Wrangler
+npm install -g wrangler
+
+# Build and deploy
+npm run build
+wrangler pages deploy dist/
+```
+
+## Docker
+
+```dockerfile
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+```
+
+## Environment Variables
+
+For builds that need environment variables:
+
+```bash
+# .env (local development)
+PUBLIC_SITE_URL=https://your-domain.com
+PUBLIC_API_KEY=your-api-key
+```
+
+> **Note:** Only variables prefixed with `PUBLIC_` are available in the client bundle.
+
+## Build Output
+
+After `npm run build`, your static files are in the `dist/` directory. You can serve these with any static file server:
+
+```bash
+npx serve dist/
+```

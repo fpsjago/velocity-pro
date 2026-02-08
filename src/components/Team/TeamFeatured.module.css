@@ -1,0 +1,112 @@
+.section {
+  padding: var(--space-16, 8rem) 0;
+  background: var(--color-bg-muted, #f1f5f9);
+}
+
+.container {
+  max-width: var(--container-lg, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--space-5, 1.5rem);
+}
+
+.heading {
+  text-align: center;
+  font-size: var(--font-h2, clamp(1.75rem, 3vw, 2.5rem));
+  font-weight: 700;
+  color: var(--color-text, #1a1a2e);
+  margin-bottom: var(--space-10, 4rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8, 3rem);
+}
+
+.card {
+  display: flex;
+  gap: var(--space-6, 2rem);
+  background: var(--color-surface, #fff);
+  border-radius: 16px;
+  padding: var(--space-6, 2rem);
+  border: 1px solid var(--color-border, #e2e8f0);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--color-primary, #6366f1), var(--color-accent, #818cf8));
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: var(--font-h3, 1.5rem);
+  font-weight: 700;
+  color: var(--color-text, #1a1a2e);
+  margin-bottom: var(--space-1, 0.25rem);
+}
+
+.role {
+  font-size: 0.9375rem;
+  color: var(--color-primary, #6366f1);
+  font-weight: 600;
+  margin-bottom: var(--space-3, 0.75rem);
+}
+
+.bio {
+  font-size: var(--font-body, 1rem);
+  line-height: var(--leading-normal, 1.6);
+  color: var(--color-text-secondary, #64748b);
+  margin-bottom: var(--space-4, 1rem);
+  flex: 1;
+}
+
+.social {
+  display: flex;
+  gap: var(--space-3, 0.75rem);
+}
+
+.socialLink {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-muted, #f1f5f9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary, #64748b);
+  text-decoration: none;
+  transition: background 200ms, color 200ms;
+}
+
+.socialLink:hover {
+  background: var(--color-primary, #6366f1);
+  color: #fff;
+}
+
+.socialIcon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .card { flex-direction: column; text-align: center; }
+  .avatar { margin: 0 auto; }
+  .social { justify-content: center; }
+}

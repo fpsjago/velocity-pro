@@ -1,0 +1,34 @@
+/* Theme: Indigo Night (Default) */
+:root {
+  --color-primary: #6366F1;
+  --color-primary-hover: #4F46E5;
+  --color-primary-light: #EEF2FF;
+  --color-accent: #818CF8;
+  --color-bg: #FAFBFF;
+  --color-bg-muted: #F1F5F9;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F8FAFC;
+  --color-border: #E2E8F0;
+  --color-text: #1A1A2E;
+  --color-text-secondary: #64748B;
+  --color-text-tertiary: #94A3B8;
+  --color-gradient-start: #6366F1;
+  --color-gradient-end: #A855F7;
+}
+
+[data-theme="dark"] {
+  --color-primary: #818CF8;
+  --color-primary-hover: #6366F1;
+  --color-primary-light: #1E1B4B;
+  --color-accent: #A5B4FC;
+  --color-bg: #0A0A1A;
+  --color-bg-muted: #111128;
+  --color-surface: #16163A;
+  --color-surface-hover: #1E1E4A;
+  --color-border: #2A2A5A;
+  --color-text: #E8E8F0;
+  --color-text-secondary: #A0A0C0;
+  --color-text-tertiary: #6B6B8D;
+  --color-gradient-start: #818CF8;
+  --color-gradient-end: #C084FC;
+}

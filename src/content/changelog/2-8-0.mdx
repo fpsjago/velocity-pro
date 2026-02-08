@@ -1,0 +1,29 @@
+---
+version: "2.8.0"
+date: "2025-08-10"
+title: "Custom Functions & Scheduled Triggers"
+description: "Write custom JavaScript functions inside workflows and trigger automations on a schedule with cron-based triggers."
+changes:
+  - type: "feature"
+    text: "Custom function nodes — write JavaScript/TypeScript directly in the workflow editor"
+  - type: "feature"
+    text: "Scheduled triggers with cron syntax, timezone support, and execution history"
+  - type: "feature"
+    text: "Workflow versioning — save, name, and restore previous versions of any workflow"
+  - type: "improvement"
+    text: "Node configuration panel redesigned with better defaults and inline documentation"
+  - type: "improvement"
+    text: "Error messages now include suggested fixes and links to relevant documentation"
+  - type: "fix"
+    text: "Fixed Slack integration not handling rate limits correctly during bulk operations"
+  - type: "fix"
+    text: "Resolved edge case where conditional branches could execute both paths simultaneously"
+---
+
+## Custom Functions
+
+Power users can now write custom JavaScript or TypeScript functions directly in the workflow editor. Functions have access to a sandboxed runtime with built-in utilities for data transformation, HTTP requests, and date manipulation.
+
+## Scheduled Triggers
+
+Workflows can now be triggered on a schedule using standard cron syntax. Configure timezone-aware schedules with execution history and failure notifications.

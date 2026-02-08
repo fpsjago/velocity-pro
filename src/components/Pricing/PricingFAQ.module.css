@@ -1,0 +1,103 @@
+.section {
+  padding: var(--space-16, 8rem) 0;
+}
+
+.container {
+  max-width: var(--container-md, 960px);
+  margin: 0 auto;
+  padding: 0 var(--space-5, 1.5rem);
+}
+
+.heading {
+  text-align: center;
+  font-size: var(--font-h2, clamp(1.75rem, 3vw, 2.5rem));
+  font-weight: 700;
+  color: var(--color-text, #1a1a2e);
+  margin-bottom: var(--space-10, 4rem);
+}
+
+.item {
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5, 1.5rem) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-text, #1a1a2e);
+  gap: var(--space-4, 1rem);
+}
+
+.trigger:hover {
+  color: var(--color-primary, #6366f1);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--color-text-tertiary, #94a3b8);
+  transition: transform 200ms ease;
+}
+
+.iconOpen {
+  transform: rotate(45deg);
+}
+
+.content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 300ms ease, padding 300ms ease;
+}
+
+.contentOpen {
+  max-height: 300px;
+}
+
+.answer {
+  padding: 0 0 var(--space-5, 1.5rem);
+  font-size: var(--font-body, 1rem);
+  line-height: var(--leading-normal, 1.6);
+  color: var(--color-text-secondary, #64748b);
+}
+
+.cta {
+  text-align: center;
+  margin-top: var(--space-10, 4rem);
+  padding: var(--space-8, 3rem);
+  background: var(--color-bg-muted, #f1f5f9);
+  border-radius: 16px;
+}
+
+.ctaText {
+  font-size: var(--font-h3, 1.5rem);
+  font-weight: 700;
+  color: var(--color-text, #1a1a2e);
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.ctaBtn {
+  display: inline-block;
+  padding: var(--space-3, 0.75rem) var(--space-6, 2rem);
+  background: var(--color-primary, #6366f1);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 200ms;
+}
+
+.ctaBtn:hover {
+  background: var(--color-primary-hover, #4f46e5);
+}

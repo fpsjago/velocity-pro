@@ -1,0 +1,40 @@
+.layout {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-5);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.title {
+  font-size: var(--font-display);
+  font-weight: 800;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.1;
+  margin-bottom: var(--space-5);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  color: var(--color-text-secondary);
+  font-size: var(--font-body);
+}
+
+.divider {
+  width: 48px;
+  height: 3px;
+  background: var(--color-primary);
+  margin: var(--space-8) auto;
+  border-radius: 2px;
+}
+
+.content {
+  font-size: 1.15rem;
+  line-height: 1.9;
+}

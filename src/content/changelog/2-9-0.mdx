@@ -1,0 +1,25 @@
+---
+version: "2.9.0"
+date: "2025-09-20"
+title: "Performance & Polish"
+description: "A focused release on performance improvements, bug fixes, and quality-of-life enhancements based on community feedback."
+changes:
+  - type: "improvement"
+    text: "Dashboard load time reduced by 55% with lazy loading and skeleton states"
+  - type: "improvement"
+    text: "Workflow history now retains 90 days of execution logs (up from 30)"
+  - type: "improvement"
+    text: "CSV import supports files up to 100MB (up from 10MB)"
+  - type: "fix"
+    text: "Fixed workflow duplication losing custom node configurations"
+  - type: "fix"
+    text: "Resolved intermittent 504 errors on workflow execution under high concurrency"
+  - type: "fix"
+    text: "Fixed date picker not respecting user's locale settings"
+  - type: "fix"
+    text: "Corrected billing calculation for mid-cycle plan upgrades"
+---
+
+## Performance Focus
+
+This release is all about making Velocity faster and more reliable. Dashboard load times are down 55%, and we've squashed several long-standing bugs that were affecting power users.

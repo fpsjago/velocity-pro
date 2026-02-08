@@ -1,0 +1,64 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5, 1.5rem);
+  background: var(--color-bg, #fafbff);
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 16px;
+  padding: var(--space-8, 3rem);
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: var(--space-6, 2rem);
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-gradient-start, #6366f1), var(--color-gradient-end, #a855f7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading {
+  text-align: center;
+  font-size: var(--font-h3, 1.5rem);
+  font-weight: 700;
+  color: var(--color-text, #1a1a2e);
+  margin-bottom: var(--space-2, 0.5rem);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: var(--font-small, 0.875rem);
+  color: var(--color-text-secondary, #64748b);
+  margin-bottom: var(--space-6, 2rem);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+}
+
+.forgotRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer {
+  text-align: center;
+  margin-top: var(--space-5, 1.5rem);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #64748b);
+}

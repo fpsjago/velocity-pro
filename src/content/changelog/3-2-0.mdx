@@ -1,0 +1,29 @@
+---
+version: "3.2.0"
+date: "2026-01-28"
+title: "Real-Time Collaboration & Teams Dashboard"
+description: "This release brings real-time collaboration to all Team plan users, plus a completely redesigned analytics dashboard."
+changes:
+  - type: "feature"
+    text: "Real-time cursor presence — see who's editing a workflow in real time"
+  - type: "feature"
+    text: "Team analytics dashboard with usage metrics, activity feed, and performance trends"
+  - type: "feature"
+    text: "Workflow comments and @mentions for async collaboration"
+  - type: "improvement"
+    text: "Workflow editor performance improved by 40% for large workflows (100+ nodes)"
+  - type: "improvement"
+    text: "Search now indexes workflow descriptions and node labels for better discoverability"
+  - type: "fix"
+    text: "Fixed timezone handling in scheduled triggers for users in UTC+ time zones"
+  - type: "fix"
+    text: "Resolved memory leak in the workflow debugger when stepping through loops"
+---
+
+## Real-Time Collaboration
+
+Teams can now work on the same workflow simultaneously. You'll see live cursors for each team member, with real-time sync powered by our custom CRDT engine. No more "someone else is editing this" warnings.
+
+## Team Analytics Dashboard
+
+The new dashboard gives team leads visibility into how workflows are performing across the organization. Track execution counts, failure rates, and resource usage — all in one place.

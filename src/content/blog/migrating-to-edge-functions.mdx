@@ -1,0 +1,92 @@
+---
+title: "How We Cut API Latency by 71% With Edge Functions"
+excerpt: "Moving our most-called endpoints to the edge reduced p95 latency from 340ms to 98ms. Here's our migration strategy."
+date: "2025-12-05"
+author:
+  name: "Sarah Chen"
+  role: "CTO"
+category: "Engineering"
+readTime: "7 min read"
+featured: false
+tags: ["engineering", "performance", "edge"]
+---
+
+## The Latency Problem
+
+Our API serves customers in 47 countries. For users in North America (where our origin servers live), response times were great — p50 of 45ms, p95 of 120ms. For users in Southeast Asia and Australia, the story was different: p50 of 180ms, p95 of 340ms.
+
+That 340ms doesn't sound catastrophic, but it compounds. A typical page load makes 4-6 API calls. When each one takes 300ms+, the experience feels sluggish. Our user satisfaction scores in APAC were 22% lower than in North America.
+
+## Why Not Just Add More Regions?
+
+The traditional solution — deploy your application to more AWS regions — has significant operational overhead. Each region needs its own database replica, its own deployment pipeline, and its own monitoring. For a 40-person engineering team, managing 6+ regions is a full-time job for multiple engineers.
+
+Edge functions offered a middle ground: run compute close to the user without managing infrastructure across regions.
+
+## What We Moved to the Edge
+
+Not everything belongs at the edge. We identified three categories of API endpoints:
+
+### Category 1: Pure Reads (Perfect for Edge)
+Endpoints that read from a cache or CDN. User settings, feature flags, configuration, public content. These moved first and were trivial to migrate.
+
+### Category 2: Computation Without State (Good for Edge)
+Endpoints that transform data but don't need database access. Report generation from cached data, search across pre-built indexes, webhook validation. These required more work but yielded the biggest latency improvements.
+
+### Category 3: Stateful Writes (Stay at Origin)
+Anything that writes to our primary database stays at the origin. We use optimistic UI patterns to hide the latency from users.
+
+## The Migration
+
+We migrated 23 endpoints over 6 weeks. Our stack:
+
+- **Runtime:** Cloudflare Workers (V8 isolates, under 1ms cold start)
+- **Data layer:** Cloudflare KV for configuration, R2 for cached datasets
+- **Routing:** Path-based routing at the CDN level — edge endpoints get intercepted before reaching the origin
+
+```typescript
+// Before: Express handler at origin
+app.get('/api/v1/config/:teamId', async (req, res) => {
+  const config = await db.teams.findById(req.params.teamId);
+  res.json(config);
+});
+
+// After: Edge function with KV cache
+export default {
+  async fetch(request: Request, env: Env) {
+    const teamId = new URL(request.url).pathname.split('/').pop();
+    const config = await env.CONFIG_KV.get(`team:${teamId}`, 'json');
+    return Response.json(config);
+  }
+};
+```
+
+The key insight: we didn't need real-time data for most read endpoints. A 30-second cache TTL was acceptable for 90% of use cases. For the remaining 10%, we implemented cache invalidation via webhooks from our origin server.
+
+## Results
+
+After completing the migration:
+
+| Metric | Before | After | Change |
+|--------|--------|-------|--------|
+| Global p50 latency | 95ms | 32ms | -66% |
+| Global p95 latency | 340ms | 98ms | -71% |
+| APAC p50 latency | 180ms | 38ms | -79% |
+| Origin server load | 100% | 62% | -38% |
+| Monthly compute cost | $8,400 | $5,200 | -38% |
+
+The cost savings were a pleasant surprise. Edge functions are billed per request, and since they're so fast, the per-request cost is tiny. Meanwhile, we were able to downsize our origin server fleet by 38%.
+
+## Gotchas
+
+**Cold starts aren't zero.** While V8 isolates start in under 1ms, the first request to a new edge location still needs to populate the KV cache. We solved this with cache warming for our largest customers.
+
+**Debugging is harder.** When your code runs in 200+ locations, traditional debugging tools don't work well. We invested heavily in structured logging and distributed tracing.
+
+**Data consistency windows.** With a 30-second cache TTL, users occasionally see stale data after making changes. We handle this client-side by optimistically updating the UI and using ETags to detect staleness.
+
+## Should You Move to the Edge?
+
+If your application serves a global audience and has read-heavy API patterns, edge functions are almost certainly worth investigating. Start with your simplest, most-called endpoints and measure the impact before committing to a full migration.
+
+The edge isn't a silver bullet, but for the right use cases, it's remarkably effective.

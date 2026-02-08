@@ -1,0 +1,53 @@
+---
+// About page — Velocity Pro
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Velocity Pro</title>
+</head>
+<body>
+  <main>
+    <section style="text-align:center;padding:5rem 1.5rem 2rem;">
+      <h1 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;">About Velocity</h1>
+      <p style="color:#64748b;max-width:640px;margin:1rem auto 0;line-height:1.6;">We're a small team of builders, designers, and engineers on a mission to help SaaS teams ship faster and convert better.</p>
+    </section>
+
+    <div id="stats-bar"></div>
+    <div id="team-featured"></div>
+    <div id="team-grid"></div>
+    <div id="testimonial-carousel"></div>
+    <div id="logo-cloud"></div>
+  </main>
+
+  <script>
+    import { createElement } from 'react';
+    import { createRoot } from 'react-dom/client';
+    import StatsBar from '../components/SocialProof/StatsBar';
+    import TeamFeatured from '../components/Team/TeamFeatured';
+    import TeamGrid from '../components/Team/TeamGrid';
+    import TestimonialCarousel from '../components/SocialProof/TestimonialCarousel';
+    import LogoCloud from '../components/SocialProof/LogoCloud';
+    import { stats } from '../data/stats';
+    import { team } from '../data/team';
+    import { testimonials, logos } from '../data/testimonials';
+
+    createRoot(document.getElementById('stats-bar')!).render(
+      createElement(StatsBar, { stats })
+    );
+    createRoot(document.getElementById('team-featured')!).render(
+      createElement(TeamFeatured, { members: team.filter(m => m.featured) })
+    );
+    createRoot(document.getElementById('team-grid')!).render(
+      createElement(TeamGrid, { members: team })
+    );
+    createRoot(document.getElementById('testimonial-carousel')!).render(
+      createElement(TestimonialCarousel, { testimonials })
+    );
+    createRoot(document.getElementById('logo-cloud')!).render(
+      createElement(LogoCloud, { logos })
+    );
+  </script>
+</body>
+</html>

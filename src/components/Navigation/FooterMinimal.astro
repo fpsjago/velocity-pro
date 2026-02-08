@@ -1,0 +1,78 @@
+---
+import { socialLinks } from '../../data/navigation';
+---
+
+<footer class="footer-minimal">
+  <div class="footer-minimal__inner">
+    <a href="/" class="footer-minimal__logo" aria-label="Velocity Pro home">
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="var(--color-primary)" />
+        <path d="M10 22L16 10L22 22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span>Velocity</span>
+    </a>
+
+    <nav class="footer-minimal__links" aria-label="Footer links">
+      <a href="/pricing">Pricing</a>
+      <a href="/docs">Docs</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <p class="footer-minimal__copy">&copy; {new Date().getFullYear()} Velocity Pro</p>
+  </div>
+</footer>
+
+<style>
+  .footer-minimal {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-5) var(--space-5);
+  }
+
+  .footer-minimal__inner {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .footer-minimal__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .footer-minimal__links {
+    display: flex;
+    gap: var(--space-5);
+  }
+
+  .footer-minimal__links a {
+    color: var(--color-text-secondary);
+    font-size: var(--font-small);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-minimal__links a:hover {
+    color: var(--color-text);
+  }
+
+  .footer-minimal__copy {
+    color: var(--color-text-tertiary);
+    font-size: var(--font-small);
+  }
+
+  @media (max-width: 639px) {
+    .footer-minimal__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,98 @@
+.section {
+  padding: var(--space-16, 8rem) 0;
+  background: var(--color-bg-muted, #f1f5f9);
+}
+
+.container {
+  max-width: var(--container-lg, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--space-5, 1.5rem);
+}
+
+.heading {
+  text-align: center;
+  font-size: var(--font-h2, clamp(1.75rem, 3vw, 2.5rem));
+  font-weight: 700;
+  color: var(--color-text, #1a1a2e);
+  margin-bottom: var(--space-10, 4rem);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface, #fff);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.08));
+}
+
+.table thead th {
+  padding: var(--space-5, 1.5rem) var(--space-4, 1rem);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text, #1a1a2e);
+  border-bottom: 2px solid var(--color-border, #e2e8f0);
+  position: sticky;
+  top: 0;
+  background: var(--color-surface, #fff);
+  z-index: 1;
+}
+
+.table thead th:first-child {
+  text-align: left;
+  width: 40%;
+}
+
+.popularHeader {
+  color: var(--color-primary, #6366f1) !important;
+}
+
+.categoryRow td {
+  padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary, #64748b);
+  background: var(--color-bg-muted, #f1f5f9);
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.featureRow td {
+  padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+  text-align: center;
+  font-size: 0.9375rem;
+  color: var(--color-text, #1a1a2e);
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.featureRow td:first-child {
+  text-align: left;
+  color: var(--color-text-secondary, #64748b);
+}
+
+.check {
+  color: var(--color-primary, #6366f1);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.cross {
+  color: var(--color-text-tertiary, #94a3b8);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.8125rem;
+  }
+  .table thead th,
+  .featureRow td,
+  .categoryRow td {
+    padding: var(--space-2, 0.5rem);
+  }
+}

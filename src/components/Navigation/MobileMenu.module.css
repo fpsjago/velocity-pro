@@ -1,0 +1,137 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.overlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(85vw, 380px);
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+}
+
+.menuOpen {
+  transform: translateX(0);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  color: var(--color-text);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+}
+
+.closeBtn:hover {
+  background: var(--color-bg-muted);
+}
+
+.links {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4) var(--space-5);
+  list-style: none;
+}
+
+.linkItem {
+  animation: slideIn 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.link {
+  display: block;
+  padding: var(--space-3) 0;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.subLinks {
+  list-style: none;
+  padding: 0 0 var(--space-2) var(--space-4);
+}
+
+.subLink {
+  display: block;
+  padding: var(--space-2) 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.subLink:hover {
+  color: var(--color-primary);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.loginBtn {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ctaBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}

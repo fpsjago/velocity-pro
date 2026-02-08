@@ -1,0 +1,113 @@
+/* Global Styles — Velocity Pro */
+
+:root {
+  /* Indigo Night (Default) */
+  --color-primary: #6366F1;
+  --color-primary-hover: #4F46E5;
+  --color-primary-light: #EEF2FF;
+  --color-accent: #818CF8;
+  --color-bg: #FAFBFF;
+  --color-bg-muted: #F1F5F9;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F8FAFC;
+  --color-border: #E2E8F0;
+  --color-text: #1A1A2E;
+  --color-text-secondary: #64748B;
+  --color-text-tertiary: #94A3B8;
+  --color-gradient-start: #6366F1;
+  --color-gradient-end: #A855F7;
+
+  /* Typography */
+  --font-display: clamp(2.5rem, 5vw, 4.5rem);
+  --font-h1: clamp(2rem, 4vw, 3.5rem);
+  --font-h2: clamp(1.75rem, 3vw, 2.5rem);
+  --font-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --font-h4: clamp(1.1rem, 1.5vw, 1.35rem);
+  --font-body: clamp(1rem, 1.2vw, 1.125rem);
+  --font-small: clamp(0.8rem, 1vw, 0.875rem);
+  --font-code: 0.9375rem;
+
+  --leading-tight: 1.15;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+  --tracking-tight: -0.025em;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 5rem;
+  --space-16: 8rem;
+
+  --container-sm: 680px;
+  --container-md: 960px;
+  --container-lg: 1200px;
+  --container-xl: 1400px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.1);
+  --shadow-xl: 0 24px 60px rgba(0,0,0,0.12);
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0A0A1A;
+  --color-bg-muted: #111128;
+  --color-surface: #16163A;
+  --color-surface-hover: #1E1E4A;
+  --color-border: #2A2A5A;
+  --color-text: #E8E8F0;
+  --color-text-secondary: #A0A0C0;
+  --color-text-tertiary: #6B6B8D;
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.3);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--font-body);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

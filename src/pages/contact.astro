@@ -1,0 +1,30 @@
+---
+// Contact page — Velocity Pro
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Velocity Pro</title>
+</head>
+<body>
+  <main>
+    <div id="contact-form"></div>
+    <div id="newsletter"></div>
+  </main>
+
+  <script>
+    import { createElement } from 'react';
+    import { createRoot } from 'react-dom/client';
+    import ContactForm from '../components/Forms/ContactForm';
+    import NewsletterSignup from '../components/Forms/NewsletterSignup';
+
+    createRoot(document.getElementById('contact-form')!).render(
+      createElement(ContactForm)
+    );
+    createRoot(document.getElementById('newsletter')!).render(
+      createElement(NewsletterSignup)
+    );
+  </script>
+</body>
+</html>

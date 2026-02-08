@@ -1,0 +1,29 @@
+---
+version: "3.1.0"
+date: "2025-12-15"
+title: "API v2, Webhooks, and 12 New Integrations"
+description: "A major platform update with a redesigned API, webhook improvements, and new integrations with popular tools."
+changes:
+  - type: "feature"
+    text: "API v2 with OpenAPI 3.1 spec, typed SDKs for TypeScript, Python, and Go"
+  - type: "feature"
+    text: "Webhook retry policies with exponential backoff and dead letter queues"
+  - type: "feature"
+    text: "New integrations: Linear, Notion, Airtable, Jira, Confluence, Intercom, Zendesk, Mixpanel, Amplitude, Segment, Datadog, PagerDuty"
+  - type: "improvement"
+    text: "API rate limits increased from 100 to 500 requests/minute for Pro plans"
+  - type: "improvement"
+    text: "Webhook payload size limit increased to 5MB"
+  - type: "fix"
+    text: "Fixed OAuth token refresh race condition affecting Google Workspace integrations"
+  - type: "breaking"
+    text: "API v1 endpoints deprecated — will be removed in v4.0 (6-month migration window)"
+---
+
+## API v2
+
+Our completely redesigned API features consistent naming conventions, better error messages, and pagination that actually works. Typed SDKs for TypeScript, Python, and Go are available on npm, PyPI, and GitHub.
+
+## New Integrations
+
+We've added 12 of the most-requested integrations, bringing our total to 60+ supported platforms.

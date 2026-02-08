@@ -1,0 +1,118 @@
+---
+title: Configuration
+description: Customize themes, colors, fonts, and content in Velocity Pro.
+order: 3
+section: Configuration
+---
+
+# Configuration
+
+Velocity Pro is designed to be easily customizable. This guide covers themes, colors, typography, content, and site-wide settings.
+
+## Theme System
+
+The template ships with 3 color themes controlled via CSS custom properties and the `data-color` attribute on `<html>`.
+
+### Switching Themes
+
+Set the default theme in `BaseLayout.astro`:
+
+```html
+<html data-theme="light" data-color="indigo">
+```
+
+Available color values: `indigo` (default), `teal`, `coral`.
+
+### Theme Colors
+
+Each theme defines these CSS custom properties:
+
+```css
+:root {
+  --primary: #6366F1;      /* Main brand color */
+  --primary-hover: #4F46E5; /* Hover state */
+  --accent: #818CF8;        /* Secondary accent */
+  --bg: #FAFBFF;            /* Page background */
+  --surface: #FFFFFF;       /* Card/panel background */
+  --text: #1A1A2E;          /* Primary text */
+  --text-secondary: #64648C; /* Body text */
+  --border: #E2E2F0;        /* Borders and dividers */
+}
+```
+
+### Creating Custom Themes
+
+1. Duplicate an existing theme file (e.g., `src/styles/themes/indigo.css`)
+2. Update the CSS custom properties
+3. Add a new `data-color` selector
+4. Update the ThemeToggle component options
+
+```css
+/* src/styles/themes/custom.css */
+[data-color="custom"] {
+  --primary: #E11D48;
+  --primary-hover: #BE123C;
+  --accent: #FB7185;
+  /* ... other properties */
+}
+```
+
+## Dark Mode
+
+Dark mode is built in via `data-theme="dark"`. The toggle persists to `localStorage`.
+
+```javascript
+// Toggle dark mode programmatically
+const toggle = () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+};
+```
+
+## Typography
+
+Fonts are loaded from Google Fonts (Inter + JetBrains Mono). To self-host:
+
+1. Download font files to `public/fonts/`
+2. Update the `@font-face` declarations in `global.css`
+3. Remove the Google Fonts `<link>` tags from `BaseLayout.astro`
+
+## Content Collections
+
+Content is managed through Astro Content Collections in `src/content/`:
+
+| Collection | Path | Schema |
+|-----------|------|--------|
+| Blog | `src/content/blog/` | title, description, pubDate, category, layout |
+| Docs | `src/content/docs/` | title, description, order, section |
+| Changelog | `src/content/changelog/` | title, version, date, type |
+| Case Studies | `src/content/case-studies/` | title, company, industry, metrics |
+
+### Adding Blog Posts
+
+Create a new `.mdx` file in `src/content/blog/`:
+
+```mdx
+---
+title: "Your Post Title"
+description: "A brief description."
+pubDate: 2026-01-15
+category: "Engineering"
+layout: "standard"
+---
+
+Your content here...
+```
+
+## Site Configuration
+
+Update site-wide settings in `astro.config.mjs`:
+
+```javascript
+export default defineConfig({
+  site: 'https://your-domain.com',
+  integrations: [react(), mdx(), sitemap()],
+});
+```

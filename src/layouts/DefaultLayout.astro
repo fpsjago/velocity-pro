@@ -1,0 +1,23 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navigation/Navbar';
+import FooterMain from '../components/Navigation/FooterMain.astro';
+import BackToTop from '../components/Layout/BackToTop';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title, description, ogImage } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+  <Navbar client:load />
+  <main id="main-content" transition:animate="slide">
+    <slot />
+  </main>
+  <FooterMain />
+  <BackToTop client:idle />
+</BaseLayout>

@@ -1,0 +1,44 @@
+---
+title: "Why We Rebuilt Our Pricing Engine From Scratch"
+excerpt: "After 18 months of patches and workarounds, we made the painful decision to rewrite our billing system. Here's what we learned."
+date: "2026-01-15"
+author:
+  name: "Sarah Chen"
+  role: "CTO"
+category: "Engineering"
+readTime: "8 min read"
+featured: true
+heroImage: "/images/blog/cover-1.svg"
+tags: ["engineering", "billing", "architecture"]
+---
+
+## The Problem Nobody Wants to Talk About
+
+Every SaaS company eventually faces the same reckoning: your billing system, the thing that literally keeps the lights on, becomes the biggest bottleneck to growth. Ours was no different.
+
+When we launched Velocity in 2023, our pricing was simple. Three tiers, monthly billing, done. We used Stripe's basic subscription API and called it a day. It worked perfectly — for about six months.
+
+## When Simple Breaks Down
+
+The first cracks appeared when we introduced annual billing. Then came enterprise plans with custom pricing. Then usage-based add-ons. Then mid-cycle upgrades and downgrades. Then prorations. Then credits.
+
+Each feature was a patch on top of the previous patch. Our billing code became a tangled web of edge cases.
+
+## The Decision to Rebuild
+
+After a particularly painful quarter where a billing bug cost us $47,000 in lost revenue, we made the call: rebuild from scratch.
+
+Here's what we prioritized:
+
+- **Event-sourced billing** — Every change is an immutable event
+- **Idempotent operations** — Safe to retry any operation
+- **Real-time metering** — Usage tracked to the second
+- **Plan versioning** — Change pricing without affecting existing subscribers
+
+## Results
+
+After the migration:
+
+- **99.99% billing accuracy** (up from 99.2%)
+- **New pricing features ship in days**, not weeks
+- **Zero billing-related support tickets** in the first month

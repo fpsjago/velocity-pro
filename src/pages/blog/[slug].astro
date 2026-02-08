@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPostStandard from '../../components/Blog/BlogPostStandard.astro';
+import BlogPostWide from '../../components/Blog/BlogPostWide.astro';
+import BlogPostMinimal from '../../components/Blog/BlogPostMinimal.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const layout = post.data.layout || 'standard';
+---
+
+<BaseLayout title={post.data.title} description={post.data.excerpt}>
+  {layout === 'standard' && (
+    <BlogPostStandard
+      title={post.data.title}
+      category={post.data.category}
+      date={post.data.date}
+      readTime={post.data.readTime}
+      author={post.data.author}
+      headings={headings}
+    >
+      <Content />
+    </BlogPostStandard>
+  )}
+
+  {layout === 'wide' && (
+    <BlogPostWide
+      title={post.data.title}
+      category={post.data.category}
+      date={post.data.date}
+      readTime={post.data.readTime}
+      author={post.data.author}
+    >
+      <Content />
+    </BlogPostWide>
+  )}
+
+  {layout === 'minimal' && (
+    <BlogPostMinimal
+      title={post.data.title}
+      date={post.data.date}
+      readTime={post.data.readTime}
+      author={post.data.author}
+    >
+      <Content />
+    </BlogPostMinimal>
+  )}
+</BaseLayout>

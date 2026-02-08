@@ -1,0 +1,151 @@
+---
+title: Components
+description: Browse all 48 components included in Velocity Pro.
+order: 5
+section: Guides
+---
+
+# Components
+
+Velocity Pro includes **48 production-ready components** organized into 13 categories. All components support dark mode, responsive design, and theme customization.
+
+## Navigation (4)
+
+### Navbar
+The main navigation bar with logo, links, dropdown menus, theme toggle, and CTA button. Becomes a hamburger menu on mobile.
+
+```astro
+---
+import Navbar from '../components/Navigation/Navbar.astro';
+---
+<Navbar />
+```
+
+### MobileMenu
+Full-screen mobile navigation with smooth enter/exit animations.
+
+### NavDropdown
+Dropdown menu for nested navigation items with hover delay.
+
+### Breadcrumbs
+Contextual breadcrumb navigation for nested pages.
+
+## Hero Sections (4)
+
+### HeroHome
+The primary hero with word-by-word text reveal animation, gradient orb background, email capture input, and social proof stats.
+
+### HeroSimple
+Clean, centered hero for interior pages with title, subtitle, and optional CTA.
+
+### HeroSplit
+Two-column hero with content on one side and image/illustration on the other.
+
+### HeroWithVideo
+Hero section with an embedded or modal video player.
+
+## Feature Sections (5)
+
+### FeatureGrid
+Responsive grid of feature cards with icons and descriptions. Supports 2, 3, or 4 columns.
+
+```tsx
+<FeatureGrid
+  features={features}
+  columns={3}
+/>
+```
+
+### FeatureBento
+Asymmetric bento-box layout for highlighting features with varying importance.
+
+### FeatureList
+Alternating left/right feature sections with images.
+
+### FeatureShowcase
+Tabbed interactive showcase — click a feature tab to see its preview/screenshot.
+
+### FeatureComparison
+Side-by-side comparison (e.g., "Without Us" vs "With Us").
+
+## Social Proof (4)
+
+### TestimonialCarousel
+Auto-scrolling testimonial carousel with pause on hover and dot navigation.
+
+### TestimonialGrid
+Masonry-style grid of testimonial cards.
+
+### LogoCloud
+Company logo strip with grayscale-to-color hover effect and optional scroll animation.
+
+### StatsBar
+Animated statistics with count-up-on-scroll numbers.
+
+## Pricing (3)
+
+### PricingCards
+Monthly/annual toggle pricing cards with popular plan highlight and feature lists.
+
+### PricingComparison
+Full feature comparison table across plans.
+
+### PricingFAQ
+Accordion-style FAQ specifically for pricing questions.
+
+## Team (2)
+
+### TeamGrid
+Grid of team member cards with photo, name, role, and social links.
+
+### TeamFeatured
+Large featured team member card with extended bio.
+
+## Blog (4)
+
+### BlogGrid
+Blog listing with featured post hero, category filtering, and pagination.
+
+### BlogPostStandard
+Standard blog post layout with table of contents sidebar.
+
+### BlogPostWide
+Full-width blog post layout for visual content.
+
+### BlogPostMinimal
+Minimal, distraction-free reading layout.
+
+## Forms & Auth (4)
+
+### ContactForm, NewsletterSignup, LoginForm, SignupForm
+All forms include validation states, loading indicators, and accessible labels.
+
+## Interactive (5)
+
+### ProductDemo, CodeBlock, VideoModal, Accordion, Tabs
+Interactive components with smooth animations and keyboard navigation.
+
+## Layout Utilities (6)
+
+### Section, Container, ThemeToggle, BackToTop, Badge, Divider
+Foundational layout and utility components used throughout the template.
+
+## Footer (2)
+
+### FooterMain
+Full footer with link columns, newsletter signup, social links, and copyright.
+
+### FooterMinimal
+Compact footer for auth and docs pages.
+
+---
+
+## Component Architecture
+
+All components follow these patterns:
+
+- **CSS Modules** for styling (zero Tailwind)
+- **CSS Custom Properties** for theming
+- **React islands** for interactive components
+- **Astro components** for static layouts
+- **TypeScript** throughout

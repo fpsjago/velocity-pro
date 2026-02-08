@@ -1,0 +1,75 @@
+---
+import styles from './CaseStudyGrid.module.css';
+
+interface CaseStudy {
+  id: string;
+  data: {
+    title: string;
+    company: string;
+    industry: string;
+    excerpt: string;
+    metrics: { value: string; label: string }[];
+  };
+}
+
+interface Props {
+  studies: CaseStudy[];
+}
+
+const { studies } = Astro.props;
+const industries = ['All', ...new Set(studies.map(s => s.data.industry))];
+---
+
+<section class={styles.container}>
+  <div class={styles.header}>
+    <h1 class={styles.title}>Case Studies</h1>
+    <p class={styles.subtitle}>See how teams use Velocity to ship faster and convert better.</p>
+  </div>
+
+  <div class={styles.filters}>
+    {industries.map((ind, i) => (
+      <button class={`${styles.filterBtn} ${i === 0 ? styles.filterBtnActive : ''}`} data-filter={ind}>
+        {ind}
+      </button>
+    ))}
+  </div>
+
+  <div class={styles.grid}>
+    {studies.map(study => (
+      <a href={`/case-studies/${study.id}`} class={styles.card} data-industry={study.data.industry}>
+        <div class={styles.cardImage}>🏢</div>
+        <div class={styles.cardBody}>
+          <span class={styles.cardIndustry}>{study.data.industry}</span>
+          <h3 class={styles.cardTitle}>{study.data.title}</h3>
+          <p class={styles.cardExcerpt}>{study.data.excerpt}</p>
+          <div class={styles.cardMetrics}>
+            {study.data.metrics.slice(0, 3).map(m => (
+              <div class={styles.metric}>
+                <div class={styles.metricValue}>{m.value}</div>
+                <div class={styles.metricLabel}>{m.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('button[data-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      document.querySelectorAll('button[data-filter]').forEach(b => {
+        const classes = b.className.split(' ');
+        b.className = classes.filter(c => !c.includes('Active')).join(' ');
+      });
+      btn.className += ` ${btn.className.split(' ')[0].replace('filterBtn', 'filterBtnActive')}`;
+      
+      document.querySelectorAll('[data-industry]').forEach(card => {
+        const el = card as HTMLElement;
+        el.style.display = (filter === 'All' || card.getAttribute('data-industry') === filter) ? '' : 'none';
+      });
+    });
+  });
+</script>

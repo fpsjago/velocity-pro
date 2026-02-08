@@ -1,0 +1,70 @@
+---
+interface Props {
+  items?: { label: string; href?: string }[];
+}
+
+const pathname = Astro.url.pathname;
+const segments = pathname.split('/').filter(Boolean);
+
+const defaultItems = segments.map((seg, i) => ({
+  label: seg.charAt(0).toUpperCase() + seg.slice(1).replace(/-/g, ' '),
+  href: i < segments.length - 1 ? '/' + segments.slice(0, i + 1).join('/') : undefined,
+}));
+
+const items = Astro.props.items ?? [{ label: 'Home', href: '/' }, ...defaultItems];
+---
+
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+  <ol class="breadcrumbs__list">
+    {items.map((item, i) => (
+      <li class="breadcrumbs__item">
+        {item.href ? (
+          <a href={item.href} class="breadcrumbs__link">{item.label}</a>
+        ) : (
+          <span class="breadcrumbs__current" aria-current="page">{item.label}</span>
+        )}
+        {i < items.length - 1 && <span class="breadcrumbs__sep" aria-hidden="true">/</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs {
+    margin-bottom: var(--space-5);
+  }
+
+  .breadcrumbs__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    list-style: none;
+    font-size: var(--font-small);
+  }
+
+  .breadcrumbs__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .breadcrumbs__link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .breadcrumbs__link:hover {
+    color: var(--color-primary);
+  }
+
+  .breadcrumbs__current {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .breadcrumbs__sep {
+    color: var(--color-text-tertiary);
+  }
+</style>

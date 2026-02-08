@@ -1,0 +1,31 @@
+---
+import styles from './BlogPostMinimal.module.css';
+
+interface Props {
+  title: string;
+  date: string;
+  readTime: string;
+  author: { name: string; role: string };
+}
+
+const { title, date, readTime, author } = Astro.props;
+---
+
+<div class={styles.layout}>
+  <header class={styles.header}>
+    <h1 class={styles.title}>{title}</h1>
+    <div class={styles.meta}>
+      <span>{author.name}</span>
+      <span>·</span>
+      <span>{date}</span>
+      <span>·</span>
+      <span>{readTime}</span>
+    </div>
+  </header>
+
+  <div class={styles.divider}></div>
+
+  <div class={`${styles.content} prose`}>
+    <slot />
+  </div>
+</div>

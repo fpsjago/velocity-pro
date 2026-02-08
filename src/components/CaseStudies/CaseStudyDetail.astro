@@ -1,0 +1,39 @@
+---
+import styles from './CaseStudyDetail.module.css';
+import MetricsRow from './MetricsRow';
+
+interface Props {
+  title: string;
+  company: string;
+  excerpt: string;
+  metrics: { value: string; label: string; prefix?: string; suffix?: string }[];
+  testimonial?: { quote: string; name: string; role: string };
+}
+
+const { title, company, excerpt, metrics, testimonial } = Astro.props;
+---
+
+<section class={styles.hero}>
+  <div class={styles.heroInner}>
+    <div>
+      <div class={styles.company}>{company}</div>
+      <h1 class={styles.title}>{title}</h1>
+      <p class={styles.excerpt}>{excerpt}</p>
+    </div>
+    <div class={styles.heroImage}>🏢</div>
+  </div>
+</section>
+
+<MetricsRow metrics={metrics} client:visible />
+
+<div class={`${styles.content} prose`}>
+  <slot />
+</div>
+
+{testimonial && (
+  <div class={styles.testimonial}>
+    <p class={styles.quoteText}>{testimonial.quote}</p>
+    <div class={styles.quoteName}>{testimonial.name}</div>
+    <div class={styles.quoteRole}>{testimonial.role}</div>
+  </div>
+)}

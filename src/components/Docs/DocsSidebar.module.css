@@ -1,0 +1,152 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.searchWrap {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.searchInput:focus {
+  border-color: var(--primary);
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.section {
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.375rem 0.5rem;
+  border: none;
+  background: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.sectionTitle:hover {
+  background: var(--surface-alt);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.25rem;
+  margin-top: 0.125rem;
+}
+
+.link {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  border-left: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+.link:hover {
+  color: var(--primary);
+  background: var(--surface-alt);
+}
+
+.active {
+  color: var(--primary);
+  background: var(--surface-alt);
+  border-left-color: var(--primary);
+  font-weight: 500;
+}
+
+.mobileToggle {
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 101;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.desktop {
+  display: block;
+}
+
+.overlay {
+  display: none;
+}
+
+.drawer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileToggle {
+    display: flex;
+  }
+  .desktop {
+    display: none;
+  }
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+  }
+  .drawer {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--surface);
+    z-index: 100;
+    padding: 1.5rem;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+  }
+}

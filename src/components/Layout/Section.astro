@@ -1,0 +1,41 @@
+---
+interface Props {
+  variant?: 'default' | 'muted' | 'primary' | 'dark';
+  padding?: 'sm' | 'md' | 'lg';
+  id?: string;
+  class?: string;
+}
+
+const { variant = 'default', padding = 'lg', id, class: className } = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={['section', `section--${variant}`, `section--pad-${padding}`, className]}
+>
+  <slot />
+</section>
+
+<style>
+  .section {
+    width: 100%;
+    position: relative;
+  }
+
+  .section--pad-sm { padding: var(--space-8) 0; }
+  .section--pad-md { padding: var(--space-12) 0; }
+  .section--pad-lg { padding: clamp(4rem, 8vw, 8rem) 0; }
+
+  .section--default { background: var(--color-bg); }
+  .section--muted { background: var(--color-bg-muted); }
+  .section--primary {
+    background: var(--color-primary);
+    color: #fff;
+  }
+  .section--dark {
+    background: var(--color-bg);
+  }
+  [data-theme="dark"] .section--dark {
+    background: var(--color-bg-muted);
+  }
+</style>

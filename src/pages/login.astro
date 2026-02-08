@@ -1,0 +1,23 @@
+---
+// Login page — Velocity Pro
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — Velocity Pro</title>
+</head>
+<body>
+  <div id="login-form"></div>
+
+  <script>
+    import { createElement } from 'react';
+    import { createRoot } from 'react-dom/client';
+    import LoginForm from '../components/Forms/LoginForm';
+
+    createRoot(document.getElementById('login-form')!).render(
+      createElement(LoginForm)
+    );
+  </script>
+</body>
+</html>

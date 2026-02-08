@@ -1,0 +1,95 @@
+---
+title: "NovaCommerce Scaled From 10K to 100K Orders Without Adding Staff"
+company: "NovaCommerce"
+industry: "E-commerce"
+challenge: "Scaling operations"
+excerpt: "An e-commerce platform automated their entire order fulfillment pipeline, handling 10x volume growth with the same team size."
+metrics:
+  - value: "10x"
+    label: "Order volume growth"
+    suffix: "x"
+  - value: "99.2%"
+    label: "Order accuracy"
+    suffix: "%"
+  - value: "4.8"
+    label: "Hours avg fulfillment"
+    suffix: " hrs"
+  - value: "1.2M"
+    label: "Annual savings"
+    prefix: "$"
+testimonial:
+  quote: "We were hiring one new operations person for every 5,000 orders per month. That math doesn't work at scale. Velocity let us grow 10x without growing our ops team. It's the best investment we've made."
+  name: "Lisa Tran"
+  role: "COO, NovaCommerce"
+tags: ["e-commerce", "fulfillment", "scale"]
+---
+
+## The Challenge
+
+NovaCommerce is a direct-to-consumer brand selling premium home goods across North America and Europe. In 2024, they were processing 10,000 orders per month with a 6-person operations team.
+
+Their growth trajectory was exciting — 15% month-over-month — but their operations couldn't keep up. The process for each order involved:
+
+1. **Order validation** — Check inventory, verify shipping address, flag potential fraud
+2. **Warehouse routing** — Determine optimal fulfillment center based on customer location and inventory
+3. **Shipping label generation** — Select carrier, generate label, update tracking
+4. **Customer communication** — Send confirmation, shipping updates, delivery notification
+5. **Returns processing** — Handle return requests, generate return labels, process refunds
+6. **Exception handling** — Address issues, out-of-stock items, failed deliveries
+
+Each step involved manual intervention, switching between 4-5 different tools, and constant Slack communication between team members. Average order fulfillment time was 18 hours, and the error rate was 3.2% — resulting in costly re-ships and customer complaints.
+
+## The Breaking Point
+
+During Black Friday 2024, order volume spiked to 3x normal levels. The operations team worked 16-hour days for a week. Despite the heroic effort, order accuracy dropped to 91%, fulfillment times stretched to 48 hours, and customer satisfaction scores plummeted.
+
+The post-mortem was clear: they needed to automate or they needed to triple their team size. Tripling the team would cost $480K annually and still wouldn't solve the quality problem.
+
+## The Solution
+
+NovaCommerce chose Velocity to build an end-to-end order automation pipeline.
+
+### The Automated Pipeline
+
+**Order Intake & Validation**
+Every new order triggers a Velocity workflow that automatically validates the shipping address (via address verification API), checks real-time inventory across all warehouses, and runs fraud detection rules. Orders that pass all checks move to fulfillment automatically. Flagged orders are routed to a human review queue.
+
+**Intelligent Warehouse Routing**
+A routing algorithm considers three factors: proximity to the customer (for fastest delivery), current inventory levels (to balance stock across locations), and carrier rates (to minimize shipping cost). The algorithm improved routing efficiency by 34% compared to the team's manual decisions.
+
+**Automated Fulfillment**
+Once routed, the workflow generates pick lists, prints shipping labels, and sends warehouse notifications — all without human intervention. The warehouse team simply picks, packs, and ships.
+
+**Proactive Customer Communication**
+Customers receive real-time updates at every stage: order confirmed, picked, shipped, out for delivery, delivered. If there's a delay, they're notified proactively with a revised estimate. This reduced "where is my order?" support tickets by 73%.
+
+**Returns Automation**
+Return requests trigger a workflow that evaluates the reason, auto-approves eligible returns, generates a prepaid return label, and initiates the refund upon receipt confirmation. Return processing time dropped from 5 days to 8 hours.
+
+## The Results
+
+Over 12 months:
+
+| Metric | Before | After |
+|--------|--------|-------|
+| Monthly orders | 10,000 | 100,000 |
+| Operations team size | 6 people | 6 people |
+| Avg. fulfillment time | 18 hours | 4.8 hours |
+| Order accuracy | 96.8% | 99.2% |
+| WISMO tickets/month | 2,400 | 640 |
+| Return processing time | 5 days | 8 hours |
+
+The financial impact was significant:
+
+- **Avoided hiring costs:** $640K (8 additional hires not needed)
+- **Reduced re-ship costs:** $180K annually
+- **Shipping optimization savings:** $340K annually
+- **Net annual savings:** $1.2M
+
+## Key Insights
+
+**Automate the happy path first.** 85% of orders are straightforward. Automating those freed the team to focus on the 15% that genuinely needed human judgment.
+
+**Measure everything.** Before Velocity, NovaCommerce couldn't tell you their average fulfillment time with confidence. Now they track 40+ operational metrics in real-time.
+
+**Don't automate bad processes.** Before building workflows, NovaCommerce spent two weeks mapping and improving their processes. Automating a broken process just creates broken automation faster.

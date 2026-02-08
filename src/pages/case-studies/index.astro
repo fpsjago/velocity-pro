@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudyGrid from '../../components/CaseStudies/CaseStudyGrid.astro';
+import { getCollection } from 'astro:content';
+
+const studies = await getCollection('case-studies');
+---
+
+<BaseLayout title="Case Studies">
+  <CaseStudyGrid studies={studies} />
+</BaseLayout>
