@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
 import HeroHome from '../components/Hero/HeroHome';
 import Section from '../components/Layout/Section.astro';
 import Container from '../components/Layout/Container.astro';
@@ -8,7 +8,7 @@ import Divider from '../components/Layout/Divider.astro';
 const BASE_URL = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="Home" description="Ship your SaaS 10x faster with Velocity Pro.">
+<DefaultLayout title="Home" description="Ship your SaaS 10x faster with Velocity Pro.">
   <HeroHome client:load />
 
   <Divider variant="gradient" />
@@ -42,4 +42,4 @@ const BASE_URL = import.meta.env.BASE_URL;
       </div>
     </Container>
   </Section>
-</BaseLayout>
+</DefaultLayout>
