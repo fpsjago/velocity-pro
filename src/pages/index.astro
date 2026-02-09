@@ -4,6 +4,8 @@ import HeroHome from '../components/Hero/HeroHome';
 import Section from '../components/Layout/Section.astro';
 import Container from '../components/Layout/Container.astro';
 import Divider from '../components/Layout/Divider.astro';
+import FeatureGrid from '../components/Features/FeatureGrid';
+import FeatureBento from '../components/Features/FeatureBento';
 
 const BASE_URL = import.meta.env.BASE_URL;
 ---
@@ -13,31 +15,181 @@ const BASE_URL = import.meta.env.BASE_URL;
 
   <Divider variant="gradient" />
 
+  <!-- Stats Section -->
+  <Section variant="default" padding="lg">
+    <Container size="lg">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3rem; text-align: center; padding: 2rem 0;">
+        <div>
+          <div style="font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">35+</div>
+          <div style="color: var(--color-text-secondary); font-weight: 600;">Premium Components</div>
+        </div>
+        <div>
+          <div style="font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">10+</div>
+          <div style="color: var(--color-text-secondary); font-weight: 600;">Pre-built Pages</div>
+        </div>
+        <div>
+          <div style="font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">100%</div>
+          <div style="color: var(--color-text-secondary); font-weight: 600;">TypeScript Coverage</div>
+        </div>
+        <div>
+          <div style="font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">90+</div>
+          <div style="color: var(--color-text-secondary); font-weight: 600;">Lighthouse Score</div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Divider variant="subtle" />
+
+  <!-- Features Overview -->
   <Section variant="muted" padding="lg">
     <Container size="lg">
-      <div style="text-align: center; padding: 3rem 0;">
-        <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 1rem;">
-          Everything you need
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <h2 style="font-size: var(--font-h1); font-weight: 800; margin-bottom: 1rem;">
+          Everything you need to <span style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ship fast</span>
         </h2>
-        <p style="color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; margin-bottom: 3rem;">
+        <p style="font-size: var(--font-h4); color: var(--color-text-secondary); max-width: 640px; margin: 0 auto;">
           Production-ready components with modern animations, particle effects, and premium design.
         </p>
+      </div>
+      
+      <FeatureGrid client:visible />
+    </Container>
+  </Section>
+
+  <Divider variant="subtle" />
+
+  <!-- Bento Grid Features -->
+  <Section variant="default" padding="lg">
+    <Container size="xl">
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <h2 style="font-size: var(--font-h1); font-weight: 800; margin-bottom: 1rem;">
+          Premium features included
+        </h2>
+        <p style="font-size: var(--font-h4); color: var(--color-text-secondary); max-width: 640px; margin: 0 auto;">
+          Every detail designed for performance and developer experience.
+        </p>
+      </div>
+      
+      <FeatureBento client:visible />
+    </Container>
+  </Section>
+
+  <Divider variant="gradient" />
+
+  <!-- Technologies -->
+  <Section variant="muted" padding="lg">
+    <Container size="lg">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 1rem;">
+          Built with modern tech
+        </h2>
+        <p style="color: var(--color-text-secondary); max-width: 540px; margin: 0 auto;">
+          The latest tools and frameworks for maximum performance.
+        </p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
+        <div style="padding: 2rem; text-align: center; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🚀</div>
+          <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Astro 5</h3>
+          <p style="color: var(--color-text-secondary); font-size: 0.875rem;">Static site generation</p>
+        </div>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
-          <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
-            <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">Particle Effects</h3>
-            <p style="color: var(--color-text-secondary);">Beautiful animated particle backgrounds with tsParticles.</p>
+        <div style="padding: 2rem; text-align: center; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">⚛️</div>
+          <h3 style="font-weight: 700; margin-bottom: 0.5rem;">React 19</h3>
+          <p style="color: var(--color-text-secondary); font-size: 0.875rem;">Interactive components</p>
+        </div>
+        
+        <div style="padding: 2rem; text-align: center; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">📘</div>
+          <h3 style="font-weight: 700; margin-bottom: 0.5rem;">TypeScript</h3>
+          <p style="color: var(--color-text-secondary); font-size: 0.875rem;">100% type coverage</p>
+        </div>
+        
+        <div style="padding: 2rem; text-align: center; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🎨</div>
+          <h3 style="font-weight: 700; margin-bottom: 0.5rem;">CSS Modules</h3>
+          <p style="color: var(--color-text-secondary); font-size: 0.875rem;">Scoped styling</p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Divider variant="subtle" />
+
+  <!-- Testimonials -->
+  <Section variant="default" padding="lg">
+    <Container size="lg">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: var(--font-h2); font-weight: 700; margin-bottom: 1rem;">
+          Loved by developers
+        </h2>
+        <p style="color: var(--color-text-secondary); max-width: 540px; margin: 0 auto;">
+          See what people are saying about Velocity Pro.
+        </p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto;">
+        <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <div style="color: #fbbf24; margin-bottom: 1rem;">★★★★★</div>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">"The best Astro template I've used. Saved me weeks of development time. The animations are smooth and the code is clean."</p>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+            <div>
+              <div style="font-weight: 600;">Sarah Chen</div>
+              <div style="color: var(--color-text-secondary); font-size: 0.875rem;">Founder, TechFlow</div>
+            </div>
           </div>
-          
-          <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
-            <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">Gradient Meshes</h3>
-            <p style="color: var(--color-text-secondary);">Premium gradient overlays and animated backgrounds.</p>
+        </div>
+        
+        <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <div style="color: #fbbf24; margin-bottom: 1rem;">★★★★★</div>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">"Premium quality at an affordable price. The TypeScript integration is perfect and the components are highly customizable."</p>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+            <div>
+              <div style="font-weight: 600;">Marcus Johnson</div>
+              <div style="color: var(--color-text-secondary); font-size: 0.875rem;">Lead Developer, StartupHub</div>
+            </div>
           </div>
-          
-          <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
-            <h3 style="font-size: var(--font-h3); font-weight: 700; margin-bottom: 0.75rem;">Smooth Animations</h3>
-            <p style="color: var(--color-text-secondary);">Scroll-triggered and interactive animations throughout.</p>
+        </div>
+        
+        <div style="padding: 2rem; background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <div style="color: #fbbf24; margin-bottom: 1rem;">★★★★★</div>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">"Beautiful design and great performance out of the box. Lighthouse scores are consistently 95+. Highly recommended!"</p>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+            <div>
+              <div style="font-weight: 600;">Emma Rodriguez</div>
+              <div style="color: var(--color-text-secondary); font-size: 0.875rem;">Product Designer, CloudSync</div>
+            </div>
           </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Divider variant="gradient" />
+
+  <!-- Final CTA -->
+  <Section variant="muted" padding="lg">
+    <Container size="md">
+      <div style="text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-xl); color: #fff; box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);">
+        <h2 style="font-size: var(--font-h1); font-weight: 800; margin-bottom: 1rem;">
+          Ready to ship faster?
+        </h2>
+        <p style="font-size: var(--font-h4); margin-bottom: 2.5rem; opacity: 0.95; max-width: 560px; margin-left: auto; margin-right: auto;">
+          Join hundreds of developers building amazing SaaS products with Velocity Pro.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href={`${BASE_URL}pricing/`} style="padding: 1rem 2.5rem; background: #fff; color: #667eea; font-weight: 700; border-radius: var(--radius-md); text-decoration: none; transition: all 0.3s ease; font-size: 1.125rem;">
+            Get Started
+          </a>
+          <a href={`${BASE_URL}docs/`} style="padding: 1rem 2.5rem; background: rgba(255, 255, 255, 0.1); color: #fff; font-weight: 700; border-radius: var(--radius-md); text-decoration: none; transition: all 0.3s ease; font-size: 1.125rem; border: 1px solid rgba(255, 255, 255, 0.3);">
+            View Docs
+          </a>
         </div>
       </div>
     </Container>
