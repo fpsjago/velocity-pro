@@ -42,11 +42,11 @@ export default function HeroHome({
         </p>
         
         <div className={styles.ctas}>
-          <a href={`${BASE_URL}signup/`} className={styles.ctaPrimary}>
+          <a href={`${BASE_URL}/signup/`} className={styles.ctaPrimary}>
             {ctaPrimary}
             <ArrowRight size={18} />
           </a>
-          <a href={`${BASE_URL}features/`} className={styles.ctaSecondary}>
+          <a href={`${BASE_URL}/features/`} className={styles.ctaSecondary}>
             <Zap size={18} />
             {ctaSecondary}
           </a>
